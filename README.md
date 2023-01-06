@@ -40,6 +40,8 @@ Repositorio enfocado a almacenar el conocimiento adquirido durante diversos curs
 # <span style="color: #FC8642; font-weight: bold;">Útiles</span>
 - Generador de Favicon: [Link](https://favicon.io/favicon-converter/).
 - Documentación etiquetas HTML y mas: [Link](https://htmlreference.io/).
+
+[Volver al Índice 🔝](#índice)
 # <span style="color: #FC8642; font-weight: bold;">Historia HTML</span>
 HTML (Hypertext Markup Language) es un lenguaje de marcado utilizado para estructurar y dar formato a contenido en la World Wide Web. HTML fue creado en el año 1990 por el físico y matemático británico Tim Berners-Lee, mientras trabajaba en el Centro Europeo de Investigación Nuclear (CERN).
 
