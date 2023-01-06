@@ -1,0 +1,110 @@
+:root {
+    --header_background_color: rgb(32, 32, 37);
+    --header_letters_color: rgb(255, 255, 255);
+    --header_buttons_letters_color: rgb(255, 255, 255);
+    --header_buttons_border_color: wheat;
+
+    --footer_background_color: rgb(32, 32, 37);
+}
+
+/* rgb(121, 86, 86); */
+
+header {
+    background: var(--header_background_color);
+    /* margin: -8px; */
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+}
+
+header>div {
+    display: flex;
+    white-space: nowrap;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    justify-content: space-between;
+}
+
+header>div>div>img {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    align-self: center;
+    padding: 10px 0 0 20px;
+}
+
+header>div>div {
+    color: var(--header_letters_color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: 900;
+    padding-right: 20px;
+    margin-top: 10px;
+    place-self: center;
+}
+
+header>div>div>p {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    outline: dotted;
+    outline-width: 2px;
+    padding: 2px;
+    /* margin: 0; */
+}
+
+nav {
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+}
+
+nav>a {
+    color: var(--header_buttons_letters_color);
+    /* background: rgb(121, 86, 86); */
+    -webkit-text-decoration: None;
+    text-decoration: None;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border-right: 2px solid var(--header_buttons_border_color);
+    width: 100%;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+nav>a:first-child {
+    /* color: #3b8df1; */
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+nav>a:last-child {
+    border-right: none;
+    margin-right: 20px;
+}
+
+#author {
+    outline: none;
+    margin: 0 0 0 132px;
+    padding: 0 0 10px 0;
+}
+
+/* body{
+    height: 100%;
+    max-height: 100%;
+} */
+
+footer {
+    background: var(--footer_background_color);
+    /* margin: -8px; */
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+}

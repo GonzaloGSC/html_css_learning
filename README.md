@@ -4,6 +4,7 @@ Repositorio enfocado a almacenar el conocimiento adquirido durante diversos curs
 # <span style="color: #FC8642; font-weight: bold;">Índice</span>
 - [HTML/CSS Learning](#htmlcss-learning)
 - [Índice](#índice)
+- [Útiles](#útiles)
 - [Historia HTML](#historia-html)
 - [Historia CSS](#historia-css)
 - [Motores de navegadores](#motores-de-navegadores)
@@ -15,6 +16,30 @@ Repositorio enfocado a almacenar el conocimiento adquirido durante diversos curs
 - [Aspectos Técnicos](#aspectos-técnicos)
   - [DOM](#dom)
   - [CSSDOM](#cssdom)
+- [Sobre HTML](#sobre-html)
+  - [Etiquetas](#etiquetas)
+    - [Básicos](#básicos)
+    - [Layout](#layout)
+    - [Textos](#textos)
+    - [Formulario](#formulario)
+    - [Enlaces](#enlaces)
+    - [Imágenes y video](#imágenes-y-video)
+    - [Listas](#listas)
+    - [Tablas](#tablas)
+- [Sobre CSS](#sobre-css)
+  - [Selectores](#selectores)
+    - [Selectores de elemento](#selectores-de-elemento)
+    - [Selectores de clase](#selectores-de-clase)
+    - [Selectores de ID](#selectores-de-id)
+    - [Selectores de atributo](#selectores-de-atributo)
+    - [Selectores de hijo](#selectores-de-hijo)
+    - [Selectores de hermano](#selectores-de-hermano)
+    - [Selectores de precedencia](#selectores-de-precedencia)
+    - [Selectores de pseudoclases](#selectores-de-pseudoclases)
+    - [Selectores de pseudoelementos](#selectores-de-pseudoelementos)
+# <span style="color: #FC8642; font-weight: bold;">Útiles</span>
+- Generador de Favicon: [Link](https://favicon.io/favicon-converter/).
+- Documentación etiquetas HTML y mas: [Link](https://htmlreference.io/).
 # <span style="color: #FC8642; font-weight: bold;">Historia HTML</span>
 HTML (Hypertext Markup Language) es un lenguaje de marcado utilizado para estructurar y dar formato a contenido en la World Wide Web. HTML fue creado en el año 1990 por el físico y matemático británico Tim Berners-Lee, mientras trabajaba en el Centro Europeo de Investigación Nuclear (CERN).
 
@@ -101,9 +126,172 @@ Por ejemplo, si quieres cambiar el color de fondo de un elemento HTML, puedes ut
 El CSSDOM es una parte importante del DOM y es ampliamente utilizado en la creación de aplicaciones web y en la implementación de funcionalidades avanzadas en las páginas web.
 
 [Volver al Índice 🔝](#índice)
+# <span style="color: #FC8642; font-weight: bold;">Sobre HTML</span>
+## <span style="color: #D67238; font-weight: bold;">Etiquetas</span>
+Para ver un mejor resumen de las etiquetas, visitar el siguiente [Link](https://htmlreference.io/).
+### <span style="color: #B05D2E; font-weight: bold;">Básicos</span>
+- html: Es la etiqueta principal de HTML y define el inicio y el final de un documento HTML.
+- head: Contiene información meta sobre el documento, como el título y los enlaces a archivos CSS y JavaScript.
+- title: Define el título de la página, que se muestra en la pestaña del navegador.
+- body: Contiene el contenido visible de la página web.
+- div: Es la etiqueta de división y se utiliza para dividir el contenido en secciones lógicas.
+- main: Define el contenido principal de un documento.
 
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Layout</span>
+- header: Define un encabezado para una sección o una página.
+- nav: Define una sección de navegación.
+- section: Define una sección temática en un documento.
+- article: Define un artículo autónomo.
+- aside: Define un contenido secundario relacionado con el contenido principal.
+- footer: Define un pie de página para una sección o una página.
 
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Textos</span>
+- h1-h6: Son etiquetas de encabezado que se utilizan para definir títulos y subtítulos.
+- p: Es la etiqueta de párrafo y se utiliza para definir bloques de texto.
+- span: Es la etiqueta de span y se utiliza para aplicar estilos a fragmentos de texto sin afectar a otros elementos.
 
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Formulario</span>
+- form: Es la etiqueta de formulario y se utiliza para crear formularios para recoger datos del usuario.
+- input: Es la etiqueta de entrada y se utiliza para crear distintos tipos de campos de entrada en un formulario, como campos de texto, botones, etc.
+- label: Se utiliza para asociar una etiqueta o una descripción con un elemento de formulario.
+- button: Se utiliza para crear botones en una página web. Los botones pueden utilizarse para realizar distintas acciones, como enviar formularios, resetear formularios, enlazar a otras páginas, etc.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Enlaces</span>
+- a: Es la etiqueta de enlace y se utiliza para crear enlaces a otras páginas o a recursos externos.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Imágenes y video</span>
+- img: Es la etiqueta de imagen y se utiliza para insertar imágenes en la página.
+- figure: Define contenido autónomo, como imágenes o diagramas, junto con una leyenda.
+- svg: es una etiqueta de HTML que se utiliza para insertar gráficos vectoriales en una página web. SVG (Scalable Vector Graphics) es un lenguaje de marcado para gráficos vectoriales en línea.
+- iframe: Es una etiqueta de HTML que se utiliza para insertar una página web dentro de otra página web. El contenido de la página se muestra en un marco o frame dentro de la página principal.
+- video: Es una etiqueta de HTML que se utiliza para insertar vídeos en una página web.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Listas</span>
+- li: Se utiliza para definir un elemento de lista en una lista ordenada o desordenada.
+- ul: Define una lista desordenada.
+- ol: se utiliza para definir una lista ordenada en una página web.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Tablas</span>
+- table: Define una tabla.
+- tr: Define una fila en una tabla.
+- td: Define una celda en una tabla.
+- th: Define una celda de encabezado en una tabla.
+
+[Volver al Índice 🔝](#índice)
+# <span style="color: #FC8642; font-weight: bold;">Sobre CSS</span>
+Para busqueda de colores y sus códigos, visitar el siguiente [Link](https://htmlcolorcodes.com/es/).
+## <span style="color: #D67238; font-weight: bold;">Selectores</span>
+Los selectores de CSS son herramientas que se utilizan para seleccionar elementos de una página web y aplicarles estilos. Hay varios tipos de selectores en CSS, cada uno con distintas características y usos, a continuación, algunos de ellos.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de elemento</span>
+Seleccionan elementos de HTML en función de su nombre de etiqueta. Por ejemplo, el selector p seleccionaría todos los elementos <p> de la página.
+```css
+p {
+    color: black;
+}
+```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de clase</span>
+Seleccionan elementos de HTML en función de su atributo class. Por ejemplo, el selector .mi-clase seleccionaría todos los elementos que tengan la clase mi-clase.
+```css
+.mi-clase {
+    color: black;
+}
+```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de ID</span>
+Seleccionan elementos de HTML en función de su atributo id. Por ejemplo, el selector #mi-id seleccionaría el elemento con el id mi-id.
+```css
+#mi-id {
+    color: black;
+}
+```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de atributo</span>
+Seleccionan elementos de HTML en función de un atributo específico y su valor. Por ejemplo, el selector "a[href='https://ejemplo.com']" seleccionaría todos los enlaces que apuntan a la URL https://ejemplo.com.
+```css
+a[href='https://ejemplo.com'] {
+    color: black;
+}
+```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de hijo</span>
+ Seleccionan elementos que son hijos directos de otro elemento. Por ejemplo, el selector ul > li seleccionaría todos los elementos "li" que estén directamente dentro de un elemento "ul".
+```css
+ul > li {
+    color: black;
+}
+```
+ [Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de hermano</span>
+Seleccionan elementos que tienen el mismo padre y están uno después del otro. Por ejemplo, el selector h1 + p seleccionaría todos los elementos "p" que vienen inmediatamente después de un elemento "h1".
+```css
+h1 + p {
+    color: black;
+}
+```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de precedencia</span>
+Seleccionan elementos en función de la precedencia de sus selectores. Por ejemplo, el selector div p seleccionaría todos los elementos "p" que estén dentro de un elemento "div", mientras que el selector div > p sólo seleccionaría los elementos "p" que sean hijos directos de un elemento "div".
+```css
+/* Para seleccionar todos los elementos "p" que estén dentro de un elemento "div" */
+div p { 
+    color: black;
+}
+
+/* Para seleccionar los elementos "p" que sean hijos directos de un elemento "div" */
+div > p { 
+    color: black;
+}
+```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de pseudoclases</span>
+Los selectores de pseudoclases son un tipo especial de selectores en CSS que permiten seleccionar elementos en función de su estado o posición en la página. Los selectores de pseudoclases empiezan con dos puntos (:) y se utilizan para seleccionar elementos que no tienen un atributo específico, sino que tienen un estado determinado.
+
+Algunos ejemplos de selectores de pseudoclases son:
+
+- :hover: Selecciona elementos cuando el usuario pasa el cursor por encima de ellos.
+- :active: Selecciona elementos cuando el usuario los está pulsando.
+- :focus: Selecciona elementos cuando tienen el foco (por ejemplo, cuando se está escribiendo en un campo de texto).
+- :first-child: Selecciona el primer hijo de un elemento.
+- :last-child: Selecciona el último hijo de un elemento.
+- :nth-child(n): Selecciona el n-ésimo hijo de un elemento.
+```css
+#button_send{
+    color: black;
+}
+
+#button_send:hover{
+    color: blue;
+}
+```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de pseudoelementos</span>
+Los selectores de pseudoelementos son un tipo especial de selectores en CSS que permiten seleccionar y dar estilos a partes específicas de un elemento. Los selectores de pseudoelementos empiezan con dos puntos y dos guiones bajos (::) y se utilizan para seleccionar elementos que no tienen un atributo específico, sino que representan una parte determinada de un elemento.
+
+Algunos ejemplos de selectores de pseudoelementos son:
+
+- ::before: Selecciona el contenido que se inserta antes de un elemento.
+- ::after: Selecciona el contenido que se inserta después de un elemento.
+- ::first-letter: Selecciona la primera letra de un elemento.
+- ::first-line: Selecciona la primera línea de un elemento.
+- ::selection: Selecciona el texto que el usuario ha seleccionado.
+
+Por ejemplo, para añadir una flecha al final de todos los enlaces de una página, se puede utilizar el selector de pseudoelemento ::after de la siguiente manera:
+```css
+a::after {
+  content: " ▶";
+}
+```
+[Volver al Índice 🔝](#índice)
 
 
 <!--
