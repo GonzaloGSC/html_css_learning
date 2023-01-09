@@ -5,6 +5,9 @@
     --header_buttons_border_color: wheat;
 
     --footer_background_color: rgb(32, 32, 37);
+    --footer_letters_color: rgb(255, 255, 255);
+    --footer_buttons_letters_color: rgb(255, 255, 255);
+    --footer_buttons_border_color: wheat;
 }
 
 header {
@@ -73,7 +76,8 @@ header>nav>a {
     padding: 5px;
 }
 
-header>nav>a:hover,  header>nav>a:focus{
+header>nav>a:hover,
+header>nav>a:focus {
     color: var(--header_buttons_border_color);
     font-size: 23px;
     text-decoration: none;
@@ -131,14 +135,16 @@ header>nav>a:last-child {
     margin-right: 20px;
 }
 
-#menu_hidden>a:hover, #menu_hidden>a:focus {
+#menu_hidden>a:hover,
+#menu_hidden>a:focus {
     color: var(--header_buttons_border_color);
     text-decoration: none;
     transition: 0.25s;
     outline: none;
 }
 
-#nav_menu_button:hover, #nav_menu_button:focus {
+#nav_menu_button:hover,
+#nav_menu_button:focus {
     color: var(--header_buttons_border_color);
     cursor: pointer;
     outline: none;
@@ -155,15 +161,82 @@ footer {
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-@media (max-width: 340px) {
-    #author {
-        margin: 0;
+footer>div {
+    display: block;
+    white-space: nowrap;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    /* justify-content: center; */
+    max-width: 23%;
+    min-width: 200px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer>div>img {
+    margin-bottom: 15px;
+}
+
+footer>div>p {
+    white-space: normal;
+    color: var(--footer_letters_color);
+}
+
+footer>div>nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: 20px;
+}
+
+footer>div>nav>a {
+    margin-right: 10px;
+    color: var(--footer_buttons_letters_color);
+    text-decoration: None;
+    place-self: center;
+    padding: 5px;
+}
+
+footer>div>nav>a:hover,
+footer>div>nav>a:focus {
+    color: var(--footer_buttons_border_color);
+    transition: 0.25s;
+    text-decoration: none;
+}
+
+.image_icon{
+    width: 55px;
+    /* background: var(--footer_buttons_letters_color); */
+}
+
+.project_link:hover, .project_link:focus{
+    background: var(--header_buttons_letters_color);
+    border-radius: 8px;
+    /* border: 1px solid var(--header_buttons_letters_color); */
+}
+
+@media (max-width: 880px) {
+    footer>div {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 35%;
+    }
+
+    footer {
+        justify-content: center;
     }
 }
 
-@media (max-width: 710px) {
+@media (max-width: 770px) {
     header>div {
         display: block;
     }
@@ -188,5 +261,22 @@ footer {
         display: flex;
         justify-content: right;
         color: var(--header_letters_color)
+    }
+
+    footer>div>img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    footer>div {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 340px) {
+    #author {
+        margin: 0;
     }
 }
