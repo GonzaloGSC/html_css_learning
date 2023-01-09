@@ -201,6 +201,7 @@ footer>div>nav {
 footer>div>nav>a {
     margin-right: 10px;
     color: var(--footer_buttons_letters_color);
+    -webkit-text-decoration: None;
     text-decoration: None;
     place-self: center;
     padding: 5px;
@@ -213,12 +214,13 @@ footer>div>nav>a:focus {
     text-decoration: none;
 }
 
-.image_icon{
+.image_icon {
     width: 55px;
     /* background: var(--footer_buttons_letters_color); */
 }
 
-.project_link:hover, .project_link:focus{
+.project_link:hover,
+.project_link:focus {
     background: var(--header_buttons_letters_color);
     border-radius: 8px;
     /* border: 1px solid var(--header_buttons_letters_color); */
