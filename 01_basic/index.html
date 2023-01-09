@@ -5,32 +5,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="./styles/style.css">
-    
-    <title>Entertainment</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/01_basic/media/images/icons/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/01_basic/media/images/icons/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/01_basic/media/images/icons/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../../siheaderte.webmanifest">
+    <link rel="manifest" href="../site.webmanifest">
+    <title>Entertainment</title>
+    <source src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/fontawesome.min.js">
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+        rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/01_basic/styles/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="/01_basic/styles/pages/games.css"> -->
+    <script>
+        let show_menu = false;
+
+        function f_change_page(page_html, event) {
+            event.preventDefault();
+            if (page_html != "index.html") {
+                $('#content_div').load("/01_basic/pages/" + page_html);
+            }
+        };
+
+        function f_nav_menu_button() {
+            if (show_menu) {
+                document.getElementById("menu_hidden").style.display = "none";
+            } else {
+                document.getElementById("menu_hidden").style.display = "grid";
+            };
+            show_menu = !show_menu;
+        };
+
+        function f_close_nav_menu_button() {
+            if (show_menu) {
+                document.getElementById("menu_hidden").style.display = "none";
+                show_menu = !show_menu;
+            };
+        };
+
+        window.addEventListener('click', function (e) {
+            if (document.getElementById('nav_menu_button').contains(e.target)) {
+                // Clicked in box
+                f_nav_menu_button();
+            } else {
+                // Clicked outside the box
+                f_close_nav_menu_button();
+            };
+        });
+    </script>
 </head>
 
 <body>
-
     <header>
         <div>
-            <img src="/01_basic/media/images/logo.png" alt="page_logo">
+            <div>
+                <img src="/01_basic/media/images/logo.png" alt="page_logo">
+                <p id="author">por Gonzalo Salinas.</p>
+            </div>
+            <div>
+                <p id="phone"><i class="icon-mobile-phone icon-1x"></i> +56 (9)12345678</p>
+                <p id="email"><i class="icon-envelope-alt icon-1x"></i> contacto@correo.cl</p>
+                <p id="direction"><i class="icon-building icon-1x"></i> Chile, Santiago, Av. Principal #1234</p>
+            </div>
         </div>
         <nav>
             <a href="/01_basic/index.html">Home</a>
-            <a href="/01_basic/pages/games.html">VideoGames</a>
-            <a href="/01_basic/pages/series.html">Series</a>
-            <a href="/01_basic/pages/films.html">Films</a>
-            <a href="/01_basic/pages/things.html">Things that i want</a>
+            <a href="" onclick="f_change_page('games.html', event)">VideoGames</a>
+            <a href="" onclick="f_change_page('series.html', event)">Series</a>
+            <a href="" onclick="f_change_page('films.html', event)">Films</a>
+            <a href="" onclick="f_change_page('things.html', event)">Things that i want</a>
         </nav>
+        <div id="nav_menu_hidden">
+            <i class="icon-list icon-3x" id="nav_menu_button"></i>
+            <nav id="menu_hidden">
+                <a href="/01_basic/index.html">Home</a>
+                <a href="" onclick="f_change_page('games.html', event)">VideoGames</a>
+                <a href="" onclick="f_change_page('series.html', event)">Series</a>
+                <a href="" onclick="f_change_page('films.html', event)">Films</a>
+                <a href="" onclick="f_change_page('things.html', event)">Things that i want</a>
+            </nav>
+        </div>
     </header>
-
+    <div id="content_div"></div>
+    <footer>
+        <div>Cosa</div> 
+        <!-- CONTINUAR AQUÍ ⬆⬆⬆⬆ -->
+    </footer>
 </body>
 
 </html>
