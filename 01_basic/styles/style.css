@@ -12,33 +12,66 @@
 
 header {
     background: var(--header_background_color);
-    height: -webkit-min-content;
+    /* height: -webkit-min-content;
     height: -moz-min-content;
-    height: min-content;
+    height: min-content; */
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>div>img {
+    max-width: 200px;
+    align-self: center;
+}
+
+.contact_div,
+.contact_div>div {
+    /* max-width: 200px; */
+    align-self: center;
+    text-align: center;
+    color: var(--header_letters_color);
+}
+
+/* .icon-chevron-down {
+    
+} */
+/* 
+.bounce:hover {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+} */
+
+.contact_div:hover,
+.contact_div:hover>div {
+    cursor: pointer;
+    color: var(--header_buttons_border_color);
+}
+
+.icon-2x {
+    font-size: 30px;
 }
 
 header>div {
-    display: flex;
-    white-space: nowrap;
-    height: -webkit-min-content;
-    height: -moz-min-content;
-    height: min-content;
-    justify-content: space-between;
-}
-
-header>div>div>img {
-    width: -webkit-min-content;
-    width: -moz-min-content;
-    width: min-content;
-    height: -webkit-min-content;
-    height: -moz-min-content;
-    height: min-content;
-    align-self: center;
-    padding: 10px 0 0 20px;
-    margin-right: 10px;
-}
-
-header>div>div {
     color: var(--header_letters_color);
     font-family: 'Courier New', Courier, monospace;
     margin-left: 20px;
@@ -46,7 +79,7 @@ header>div>div {
     place-self: center;
 }
 
-header>div>div>p {
+header>div>p {
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
@@ -61,25 +94,26 @@ header>nav {
     justify-content: space-evenly;
     height: 100%;
     align-items: center;
+    margin-right: 150px;
 }
 
 header>nav>a {
     color: var(--header_buttons_letters_color);
     -webkit-text-decoration: NonPe;
     text-decoration: None;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     border-right: 2px solid var(--header_buttons_border_color);
     width: 100%;
-    margin-left: 10px;
-    padding: 5px;
+    /* margin-left: 10px; */
+    padding: 0 5px 0 5px;
 }
 
 header>nav>a:hover,
 header>nav>a:focus {
     color: var(--header_buttons_border_color);
-    font-size: 23px;
+    /* font-size: 23px; */
     text-decoration: none;
     transition: 0.25s;
     outline: none;
@@ -87,7 +121,7 @@ header>nav>a:focus {
 
 header>nav>a:first-child {
     font-size: 30px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 header>nav>a:last-child {
@@ -95,10 +129,14 @@ header>nav>a:last-child {
     margin-right: 20px;
 }
 
-#author {
+#author, #author_hidden {
     outline: none;
-    margin: 0 0 0 132px;
+    margin: 0 0 0 53px;
     padding: 0 0 10px 0;
+}
+
+#author_hidden{
+    display: none;
 }
 
 #nav_menu_hidden {
@@ -109,7 +147,9 @@ header>nav>a:last-child {
 #menu_hidden {
     display: none;
     position: absolute;
-    margin-top: 42px;
+    margin-top: 66px;
+    translate: 164px;
+
 }
 
 #menu_hidden>a {
@@ -154,6 +194,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    background-image: url('/01_basic/media/images/site_background.png');
 }
 
 footer {
@@ -165,7 +206,7 @@ footer {
     padding-left: 20px;
     padding-right: 20px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 footer>div {
@@ -174,7 +215,6 @@ footer>div {
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
-    /* justify-content: center; */
     max-width: 23%;
     min-width: 200px;
     padding: 5px;
@@ -183,6 +223,7 @@ footer>div {
 }
 
 footer>div>img {
+    max-width: 200px;
     margin-bottom: 15px;
 }
 
@@ -226,37 +267,31 @@ footer>div>nav>a:focus {
     /* border: 1px solid var(--header_buttons_letters_color); */
 }
 
-@media (max-width: 880px) {
-    footer>div {
-        padding-left: 20px;
-        padding-right: 20px;
-        max-width: 35%;
-    }
+.final_credits {
+    display: block;
+    place-self: center;
+    width: 100%;
+    padding: 5px 20px 5px 20px;
+}
 
-    footer {
-        justify-content: center;
+.final_credits>p {
+    text-align: center;
+    color: var(--footer_letters_color);
+}
+
+@media (max-width: 1335px) {
+    header>nav {
+        margin: 0;
     }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 1180px) {
     header>div {
         display: block;
     }
 
     header>nav {
         display: none;
-    }
-
-    header>div>div:first-child {
-        text-align: center;
-    }
-
-    header>div>div>img {
-        padding: 10px 0 0 0;
-    }
-
-    header>div>div>p {
-        white-space: pre-wrap;
     }
 
     #nav_menu_hidden {
@@ -270,15 +305,73 @@ footer>div>nav>a:focus {
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 880px) {
+    footer>div {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 35%;
+    }
+
+    /* footer {
+        justify-content: center;
+    } */
+}
+
+@media (max-width: 540px) {
+
+    .icon-mobile-phone,
+    .icon-envelope {
+        display: none;
+    }
+
+    #nav_menu_button {
+        font-size: x-large;
+    }
+
+    header>div>img {
+        max-width: 150px;
+    }
+
+    header>div {
+        margin: 0;
+    }
+
+    #nav_menu_hidden {
+        margin-right: 3px;
+    }
+
+    #author{
+        display: none;
+    }
+
+    #author_hidden {
+        display: block;
+        font-size: smaller;
+        margin-left: 40px;
+    } 
+
     footer>div {
         max-width: 100%;
         width: 100%;
     }
+
+    #menu_hidden {
+        margin-top: 55px;
+        translate: 202px;
+    }
+
+    
 }
 
-@media (max-width: 340px) {
+@media (max-width: 400px) {
+    footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* @media (max-width: 340px) {
     #author {
         margin: 0;
     }
-}
+} */

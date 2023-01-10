@@ -17,16 +17,27 @@
         rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="/01_basic/styles/style.css">
+    <link rel="stylesheet" href="/01_basic/styles/pages/games.css">
+    <link rel="stylesheet" href="/01_basic/styles/pages/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="/01_basic/styles/pages/games.css"> -->
+
     <script>
         let show_menu = false;
+
+        $(document).ready(function () {
+            $('#content_div_main').load("/01_basic/pages/main.html");
+        });
 
         function f_change_page(page_html, event) {
             event.preventDefault();
             if (page_html != "index.html") {
+                document.getElementById('content_div_main').style.display = "none";
+                document.getElementById('content_div').style.display = "flex";
                 $('#content_div').load("/01_basic/pages/" + page_html);
+            } else {
+                document.getElementById('content_div_main').style.display = "flex";
+                document.getElementById('content_div').style.display = "none";
             }
         };
 
@@ -60,24 +71,6 @@
 
 <body>
     <header>
-        <div>
-            <div>
-                <img src="/01_basic/media/images/logo.png" alt="page_logo">
-                <p id="author">por Gonzalo Salinas.</p>
-            </div>
-            <div>
-                <p id="phone"><i class="icon-mobile-phone icon-1x"></i> +56 (9)12345678</p>
-                <p id="email"><i class="icon-envelope-alt icon-1x"></i> contacto@correo.cl</p>
-                <p id="direction"><i class="icon-building icon-1x"></i> Chile, Santiago, Av. Principal #1234</p>
-            </div>
-        </div>
-        <nav>
-            <a href="/01_basic/index.html">Home</a>
-            <a href="" onclick="f_change_page('games.html', event)">VideoGames</a>
-            <a href="" onclick="f_change_page('series.html', event)">Series</a>
-            <a href="" onclick="f_change_page('films.html', event)">Films</a>
-            <a href="" onclick="f_change_page('things.html', event)">Things that i want</a>
-        </nav>
         <div id="nav_menu_hidden">
             <i class="icon-list icon-3x" id="nav_menu_button"></i>
             <nav id="menu_hidden">
@@ -85,11 +78,43 @@
                 <a href="" onclick="f_change_page('games.html', event)">VideoGames</a>
                 <a href="" onclick="f_change_page('series.html', event)">Series</a>
                 <a href="" onclick="f_change_page('films.html', event)">Films</a>
-                <a href="" onclick="f_change_page('things.html', event)">Things that i want</a>
+                <a href="" onclick="f_change_page('things.html', event)">Things of interest</a>
             </nav>
         </div>
+        <div>
+            <img src="/01_basic/media/images/logo.png" alt="page_logo">
+            <p id="author">por Gonzalo Salinas.</p>
+            <p id="author_hidden">por Gonzalo S.</p>
+        </div>
+
+        <nav>
+            <a href="/01_basic/index.html">Home</a>
+            <a href="" onclick="f_change_page('games.html', event)">VideoGames</a>
+            <a href="" onclick="f_change_page('series.html', event)">Series</a>
+            <a href="" onclick="f_change_page('films.html', event)">Films</a>
+            <a href="" onclick="f_change_page('things.html', event)">Things of interest</a>
+        </nav>
+
+        <!-- <img src="/01_basic/media/images/icons/contact_icon.svg" alt="contact_icon"> -->
+        <div class="contact_div">
+            <i class="icon-mobile-phone icon-2x"></i>
+            <i class="icon-envelope icon-2x"></i>
+            <i class="icon-building icon-2x"></i>
+            <div>
+                <i class="icon-chevron-down icon-1x"></i>
+            </div>
+        </div>
+
+        <!-- <div>
+                <p id="phone"><i class="icon-mobile-phone icon-1x"></i> +56 (9)12345678</p>
+                <p id="email"><i class="icon-envelope-alt icon-1x"></i> contacto@correo.cl</p>
+                <p id="direction"><i class="icon-building icon-1x"></i> Chile, Santiago, Av. Principal #1234</p>
+            </div> -->
     </header>
+    <!-- CONTENT -->
     <div id="content_div"></div>
+    <div id="content_div_main"></div>
+    <!-- CONTENT -->
     <footer>
         <div>
             <img src="/01_basic/media/images/logo.png" alt="page_logo">
@@ -106,7 +131,7 @@
             </nav>
         </div>
         <div>
-            <p>Recursos e información para estudiar:</p>
+            <p>Recursos e información de estudio:</p>
             <nav>
                 <a class="project_link" href="https://github.com/GonzaloGSC/html_css_learning" target="_blank">
                     <img class="image_icon" src="/01_basic/media/images/icons/html_icon.png" alt="html_icon">
@@ -142,11 +167,23 @@
         </div>
         <div>
             <p>Información adicional:</p>
-            <p>Este sitio existe para ver gráficamente algunos estilos para mostrar información de productos, artículos,
-                noticias, entre otros similares. Cada pestaña presenta un estilo distinto para presentar la información
-                y se añadieron enlaces a cada artículo o entrada en caso de que el usuario tenga interés en estas.
-                Proyecto pequeño para mostrar estilos, diseño y enlazar otros proyectos propios. </p>
+            <p>
+                Este sitio web ha sido diseñado para mostrar las habilidades del autor en el ámbito del diseño web. Al
+                visitar este sitio, podrás ver ejemplos de cómo el autor ha utilizado su creatividad y conocimientos
+                técnicos para crear sitios atractivos y fáciles de usar. Este sitio web es full responsive, lo que
+                significa que se adapta perfectamente a cualquier dispositivo, ya sea una computadora de escritorio, una
+                tableta o un teléfono móvil.
+            </p>
         </div>
+        <section class="final_credits">
+            <p>Created and Maintained by Gonzalo Salinas.</p>
+            <p> Content, code and media files licensed under
+                <a class="project_link" href="https://choosealicense.com/licenses/mit/" target="_blank">
+                    Mit-License
+                </a>
+            </p>
+        </section>
+
     </footer>
 </body>
 
