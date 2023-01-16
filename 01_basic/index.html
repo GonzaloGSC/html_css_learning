@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"> -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/01_basic/media/images/icons/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/01_basic/media/images/icons/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/01_basic/media/images/icons/favicon/favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest">
+
     <title>Entertainment</title>
+
     <source src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/fontawesome.min.js">
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
@@ -19,171 +23,28 @@
     <link rel="stylesheet" href="/01_basic/styles/style.css">
     <link rel="stylesheet" href="/01_basic/styles/pages/games.css">
     <link rel="stylesheet" href="/01_basic/styles/pages/main.css">
+    <link rel="stylesheet" href="styles/components/header.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/components/back_to_top.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/01_basic/scripts/main.js"></script>
+    <script src="/01_basic/scripts/components/header.js"></script>
+    <script src="/01_basic/scripts/components/back_to_top.js"></script>
 
-    <script>
-        let show_menu = false;
-
-        $(document).ready(function () {
-            $('#content_div_main').load("/01_basic/pages/main.html");
-        });
-
-        function f_change_page(page_html, event) {
-            event.preventDefault();
-            if (page_html != "index.html") {
-                document.getElementById('content_div_main').style.display = "none";
-                document.getElementById('content_div').style.display = "flex";
-                $('#content_div').load("/01_basic/pages/" + page_html);
-            } else {
-                document.getElementById('content_div_main').style.display = "flex";
-                document.getElementById('content_div').style.display = "none";
-            }
-        };
-
-        function f_nav_menu_button() {
-            if (show_menu) {
-                document.getElementById("menu_hidden").style.display = "none";
-            } else {
-                document.getElementById("menu_hidden").style.display = "grid";
-            };
-            show_menu = !show_menu;
-        };
-
-        function f_close_nav_menu_button() {
-            if (show_menu) {
-                document.getElementById("menu_hidden").style.display = "none";
-                show_menu = !show_menu;
-            };
-        };
-
-        window.addEventListener('click', function (e) {
-            if (document.getElementById('nav_menu_button').contains(e.target)) {
-                // Clicked in box
-                f_nav_menu_button();
-            } else {
-                // Clicked outside the box
-                f_close_nav_menu_button();
-            };
-        });
-    </script>
 </head>
 
 <body>
     <header>
-        <div id="nav_menu_hidden">
-            <i class="icon-list icon-3x" id="nav_menu_button"></i>
-            <nav id="menu_hidden">
-                <a href="/01_basic/index.html">Home</a>
-                <a href="" onclick="f_change_page('games.html', event)">VideoGames</a>
-                <a href="" onclick="f_change_page('series.html', event)">Series</a>
-                <a href="" onclick="f_change_page('films.html', event)">Films</a>
-                <a href="" onclick="f_change_page('things.html', event)">Things of interest</a>
-            </nav>
-        </div>
-        <div>
-            <img src="/01_basic/media/images/logo.png" alt="page_logo">
-            <p id="author">por Gonzalo Salinas.</p>
-            <p id="author_hidden">por Gonzalo S.</p>
-        </div>
-
-        <nav>
-            <a href="/01_basic/index.html">Home</a>
-            <a href="" onclick="f_change_page('games.html', event)">VideoGames</a>
-            <a href="" onclick="f_change_page('series.html', event)">Series</a>
-            <a href="" onclick="f_change_page('films.html', event)">Films</a>
-            <a href="" onclick="f_change_page('things.html', event)">Things of interest</a>
-        </nav>
-
-        <!-- <img src="/01_basic/media/images/icons/contact_icon.svg" alt="contact_icon"> -->
-        <div class="contact_div">
-            <i class="icon-mobile-phone icon-2x"></i>
-            <i class="icon-envelope icon-2x"></i>
-            <i class="icon-building icon-2x"></i>
-            <div>
-                <i class="icon-chevron-down icon-1x"></i>
-            </div>
-        </div>
-
-        <!-- <div>
-                <p id="phone"><i class="icon-mobile-phone icon-1x"></i> +56 (9)12345678</p>
-                <p id="email"><i class="icon-envelope-alt icon-1x"></i> contacto@correo.cl</p>
-                <p id="direction"><i class="icon-building icon-1x"></i> Chile, Santiago, Av. Principal #1234</p>
-            </div> -->
+        <div id="header_div"></div>
     </header>
     <!-- CONTENT -->
     <div id="content_div"></div>
     <div id="content_div_main"></div>
     <!-- CONTENT -->
+    <div id="back_to_top_button"></div>
     <footer>
-        <div>
-            <img src="/01_basic/media/images/logo.png" alt="page_logo">
-            <p>El entretenimiento es parte esencial de crecer. En este sitio web puedes ver varios ejemplos de buenas
-                obras que deberías disfrutar 😊</p>
-            <p>Mis redes:</p>
-            <nav>
-                <a href="https://github.com/GonzaloGSC" target="_blank">
-                    <i class="icon-github-sign icon-2x"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/gonzalogsc/" target="_blank">
-                    <i class="icon-linkedin-sign icon-2x"></i>
-                </a>
-            </nav>
-        </div>
-        <div>
-            <p>Recursos e información de estudio:</p>
-            <nav>
-                <a class="project_link" href="https://github.com/GonzaloGSC/html_css_learning" target="_blank">
-                    <img class="image_icon" src="/01_basic/media/images/icons/html_icon.png" alt="html_icon">
-                    <img class="image_icon" src="/01_basic/media/images/icons/css_icon.png" alt="css_icon">
-                </a>
-                <a class="project_link" href="https://github.com/GonzaloGSC/javascript_learning" target="_blank">
-                    <img class="image_icon" src="/01_basic/media/images/icons/js_icon.png" alt="js_icon">
-                </a>
-                <a class="project_link" href="https://github.com/GonzaloGSC/django_learning" target="_blank">
-                    <img class="image_icon" src="/01_basic/media/images/icons/dj_icon.png" alt="dj_icon">
-                </a>
-            </nav>
-        </div>
-        <div>
-            <p>Otros proyectos:</p>
-            <nav>
-                <a class="project_link" href="https://github.com/GonzaloGSC/angular_example" target="_blank">
-                    <img class="image_icon" src="/01_basic/media/images/icons/angular_icon.png" alt="angular_icon">
-                    <img class="image_icon" src="/01_basic/media/images/icons/ts_icon.png" alt="ts_icon">
-                </a>
-                <a class="project_link" href="https://github.com/GonzaloGSC/react_example" target="_blank">
-                    <img class="image_icon" src="/01_basic/media/images/icons/react_icon.png" alt="react_icon">
-                    <img class="image_icon" src="/01_basic/media/images/icons/js_icon.png" alt="js_icon">
-                </a>
-                <a class="project_link" href="https://github.com/GonzaloGSC/react_example_typescript" target="_blank">
-                    <img class="image_icon" src="/01_basic/media/images/icons/react_icon.png" alt="react_icon">
-                    <img class="image_icon" src="/01_basic/media/images/icons/ts_icon.png" alt="ts_icon">
-                </a>
-                <a class="project_link" href="https://github.com/GonzaloGSC/django_example" target="_blank">
-                    <img class="image_icon" src="/01_basic/media/images/icons/dj_icon.png" alt="dj_icon">
-                </a>
-            </nav>
-        </div>
-        <div>
-            <p>Información adicional:</p>
-            <p>
-                Este sitio web ha sido diseñado para mostrar las habilidades del autor en el ámbito del diseño web. Al
-                visitar este sitio, podrás ver ejemplos de cómo el autor ha utilizado su creatividad y conocimientos
-                técnicos para crear sitios atractivos y fáciles de usar. Este sitio web es full responsive, lo que
-                significa que se adapta perfectamente a cualquier dispositivo, ya sea una computadora de escritorio, una
-                tableta o un teléfono móvil.
-            </p>
-        </div>
-        <section class="final_credits">
-            <p>Created and Maintained by Gonzalo Salinas.</p>
-            <p> Content, code and media files licensed under
-                <a class="project_link" href="https://choosealicense.com/licenses/mit/" target="_blank">
-                    Mit-License
-                </a>
-            </p>
-        </section>
-
+        <div id="footer_div"></div>
     </footer>
 </body>
 
