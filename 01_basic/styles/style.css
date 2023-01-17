@@ -7,10 +7,8 @@
 body {
     margin: 0 auto;
     padding: 0;
-    /* background-image: url('/01_basic/media/images/site_background.png'); */
     background: var(--background_color);
     position: relative;
-    /* overflow: hidden; */
 }
 
 header>div,
@@ -20,6 +18,3 @@ body {
     max-width: 1500px;
 }
 
-/* .content_div, .content_div_main{
-
-} */

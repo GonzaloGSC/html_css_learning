@@ -25,13 +25,36 @@ header>div>div>img {
 
 .contact_div,
 .contact_div>div {
+    position: relative;
     align-self: center;
     text-align: center;
     color: var(--header_letters_color);
 }
 
-.contact_div:hover,
-.contact_div:hover>div {
+.contact_div {
+    margin-right: 20px;
+}
+
+.contact_div>span {
+    display: flex;
+    position: fixed;
+    top: 80px;
+    translate: -135px;
+    background-image: url(/01_basic/media/images/dialog_01.png);
+    background-size: 92px 31px;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position-x: center;
+    background-position-y: top;
+    opacity: 0;
+    height: 70px;
+    width: 100px;
+    justify-content: center;
+}
+
+#info_menu_button:hover,
+#info_hidden>p:hover,
+#info_hidden>p:focus {
     cursor: pointer;
     color: var(--header_buttons_border_color);
 }
@@ -69,7 +92,6 @@ header>div>nav>a {
     color: var(--header_buttons_letters_color);
     -webkit-text-decoration: NonPe;
     text-decoration: None;
-    /* calc(15px + 0.6vmax); */
     font-size: 25px;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -111,15 +133,15 @@ header>div>nav>a:last-child {
 
 #nav_menu_hidden {
     display: none;
-    margin-right: 20px;
+    margin-left: 10px;
 }
 
 #menu_hidden {
     display: none;
     position: absolute;
-    margin-top: 66px;
-    translate: 140px;
-
+    margin-top: 77px;
+    translate: 208px;
+    border-top: 1px solid var(--blue_color);
 }
 
 #menu_hidden>a {
@@ -127,13 +149,12 @@ header>div>nav>a:last-child {
     background-color: var(--header_background_color);
     -webkit-text-decoration: NonPe;
     text-decoration: None;
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-bottom: 2px solid var(--header_buttons_border_color);
-    width: 100%;
+    margin: 0px;
+    padding: 15px;
     margin-left: 10px;
-    padding: 5px;
 }
 
 #menu_hidden>a:first-child {
@@ -142,7 +163,6 @@ header>div>nav>a:last-child {
 
 #menu_hidden>a:last-child {
     border-bottom: none;
-    margin-right: 20px;
 }
 
 #menu_hidden>a:hover,
@@ -151,6 +171,40 @@ header>div>nav>a:last-child {
     text-decoration: none;
     transition: 0.25s;
     outline: none;
+}
+
+#info_hidden {
+    overflow: hidden;
+    height: 0;
+    position: absolute;
+    margin-top: 35px;
+    translate: -225px;
+}
+
+#info_hidden>p,
+#info_hidden>div {
+    color: var(--header_buttons_letters_color);
+    background-color: var(--header_background_color);
+    -webkit-text-decoration: NonPe;
+    text-decoration: None;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px;
+    padding: 5px;
+}
+
+.button_info {
+    background-color: var(--blue_color);
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-weight: 700;
+}
+
+.button_info:hover,
+.button_info:focus {
+    color: var(--header_buttons_border_color);
 }
 
 #nav_menu_button:hover,
@@ -164,23 +218,11 @@ header>div>nav>a:last-child {
     width: 60px;
 }
 
-/* @media (max-width: 3000px) {
-    header>div>nav>a {
-        font-size: 30px;
-    }
-} */
-
 @media (max-width: 1600px) {
     header>div>nav {
         margin: 0;
     }
 }
-
-/* @media (max-width: 1540px) {
-    header>div>nav>a {
-        font-size: 37px;
-    }
-} */
 
 @media (max-width: 1335px) {
     header>div>nav {
@@ -197,14 +239,36 @@ header>div>nav>a:last-child {
         display: none;
     }
 
-    #nav_menu_hidden {
+    #nav_menu_hidden,
+    #info_menu_hidden {
         display: flex;
         justify-content: right;
         color: var(--header_letters_color)
     }
+
+    #info_hidden {
+        translate: 20px;
+    }
 }
 
 @media (max-width: 585px) {
+    #info_hidden>p,
+    #info_hidden>div {
+        font-size: 0.9rem;
+    }
+
+    .contact_div>span {
+        top: 55px;
+    }
+
+    #info_hidden {
+        margin-top: 28px;
+        translate: 10px;
+    }
+
+    .contact_div {
+        margin-right: 10px;
+    }
 
     .contact_div>i {
         font-size: 30px;
@@ -226,10 +290,6 @@ header>div>nav>a:last-child {
         margin: 5px;
     }
 
-    #nav_menu_hidden {
-        margin-right: 3px;
-    }
-
     #author {
         display: none;
     }
@@ -241,9 +301,7 @@ header>div>nav>a:last-child {
     }
 
     #menu_hidden {
-        margin-top: 52px;
-        translate: 173px;
+        margin-top: 55px;
+        translate: 226px;
     }
-
-
 }

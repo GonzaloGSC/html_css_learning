@@ -1,19 +1,3 @@
-// let lastScrollTop = 0;
-// let scrollSpeed = 1.1;
-
-// //Evento para detectar scroll
-// $(window).on('scroll', function () {
-//     var st = $(this).scrollTop();
-//     if (st > lastScrollTop) {
-//         console.log("scrolling down");
-//         $('html, body').animate({ scrollTop: $(window).scrollTop() + $(window).height() }, 10);
-//     } else {
-//         console.log("scrolling up");
-//         $('html, body').animate({ scrollTop: $(window).scrollTop() - $(window).height() }, 10);
-//     }
-//     lastScrollTop = st <= 0 ? 0 : st;
-// });
-
 $(document).ready(function () {
     $('#content_div_main').load("/01_basic/pages/main.html");
     $('#header_div').load("/01_basic/components/header.html");
@@ -36,9 +20,6 @@ function f_move_backgrounds() {
     let max_speed = 8;
     let page_height = document.documentElement.clientHeight;
     let maxScroll = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-    console.log("Y: ", y);
-    console.log("PAGE_H: ", page_height);
-    console.log("maxScroll: ", maxScroll);
 
     let element_1 = document.querySelector('#parallax_games_1');
     let element_2 = document.querySelector('#parallax_games_2');

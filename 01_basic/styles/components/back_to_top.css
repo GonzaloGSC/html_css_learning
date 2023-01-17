@@ -3,18 +3,17 @@
     --blue_color: #3b8df1;
 }
 
-.right_div {
+#back_to_top_justify_div {
     display: flex;
-    justify-content: right;
+    justify-content: center;
+    margin: 20px;
 }
-
 
 #back_to_top_div {
     display: none;
     position: fixed;
-    top: 15%;
-    justify-content: right;
-    margin: 0px 40px 0px 0px;
+    top: 114px;
+    justify-content: center;
     transition: 1s;
     color: var(--white_color);
     opacity: 0;
@@ -25,27 +24,13 @@
 
 }
 
-
 #back_to_top_icon {
-    font-size: 150px;
+    font-size: 80px;
     background-image: url("/01_basic/media/images/white_01.png");
     background-repeat: no-repeat;
-    background-position-x: 20px;
-    background-position-y: 30px;
-}
-
-@media (max-width:1070px) {
-    #back_to_top_icon {
-        font-size: 100px;
-        background-position-x: 12px;
-        background-position-y: 22px;
-        background-size: 60px 46px;
-    }
-
-    #back_to_top_div {
-        top: 110px;
-        margin: 0px 20px 0px 0px;
-    }
+    background-position-x: 10px;
+    background-position-y: 18px;
+    background-size: 50px 40px;
 }
 
 @media (max-width:585px) {
