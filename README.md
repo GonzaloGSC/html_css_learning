@@ -37,9 +37,26 @@ Repositorio enfocado a almacenar el conocimiento adquirido durante diversos curs
     - [Selectores de precedencia](#selectores-de-precedencia)
     - [Selectores de pseudoclases](#selectores-de-pseudoclases)
     - [Selectores de pseudoelementos](#selectores-de-pseudoelementos)
+  - [Cascada](#cascada)
+  - [Especificidad](#especificidad)
+  - [Display: Tipos](#display-tipos)
+  - [Diferencias entre margin y padding](#diferencias-entre-margin-y-padding)
+  - [Positions](#positions)
+  - [Medidas](#medidas)
+    - [Medias absolutas](#medias-absolutas)
+    - [Medias relativas](#medias-relativas)
+  - [Arquitecturas CSS](#arquitecturas-css)
+    - [Objetivos de las arquitecturas de CSS](#objetivos-de-las-arquitecturas-de-css)
+    - [Buenas prácticas de las arquitecturas de CSS](#buenas-prácticas-de-las-arquitecturas-de-css)
+    - [Arquitectura OOCSS (Object Oriented CSS)](#arquitectura-oocss-object-oriented-css)
+    - [Arquitectura BEM (Block-Element-Modifier)](#arquitectura-bem-block-element-modifier)
+    - [Arquitectura SMACSS (Scalable and Modular Architecture for CSS)](#arquitectura-smacss-scalable-and-modular-architecture-for-css)
+    - [Arquitectura ITCSS (Inverted Triangle CSS)](#arquitectura-itcss-inverted-triangle-css)
+    - [Arquitectura Atomic Design](#arquitectura-atomic-design)
 # <span style="color: #FC8642; font-weight: bold;">Útiles</span>
 - Generador de Favicon: [Link](https://favicon.io/favicon-converter/).
-- Documentación etiquetas HTML y mas: [Link](https://htmlreference.io/).
+- Documentación etiquetas HTML y más: [Link](https://htmlreference.io/).
+- Guías de CSS y más: [Link](https://css-tricks.com/guides/).
 
 [Volver al Índice 🔝](#índice)
 # <span style="color: #FC8642; font-weight: bold;">Historia HTML</span>
@@ -242,7 +259,7 @@ h1 + p {
 ```
 [Volver al Índice 🔝](#índice)
 ### <span style="color: #B05D2E; font-weight: bold;">Selectores de precedencia</span>
-Seleccionan elementos en función de la precedencia de sus selectores. Por ejemplo, el selector div p seleccionaría todos los elementos "p" que estén dentro de un elemento "div", mientras que el selector div > p sólo seleccionaría los elementos "p" que sean hijos directos de un elemento "div".
+Seleccionan elementos en función de la precedencia de sus selectores. Por ejemplo, el selector div p seleccionaría todos los elementos "p" que estén dentro de un elemento "div", mientras que el selector div > p sólo seleccionaría los elementos "p" que sean hijos directos de un elemento "div". Un espacio en blanco se utiliza para seleccionar todos los elementos con una clase específica dentro de un elemento con otra clase, independientemente de su nivel de anidamiento.
 ```css
 /* Para seleccionar todos los elementos "p" que estén dentro de un elemento "div" */
 div p { 
@@ -293,6 +310,307 @@ a::after {
   content: " ▶";
 }
 ```
+[Volver al Índice 🔝](#índice)
+## <span style="color: #D67238; font-weight: bold;">Cascada</span>
+ En CSS, las reglas se aplican a los elementos de un documento en cascada, lo que significa que un estilo definido en un elemento padre se propagará a sus elementos hijos. Esto permite una mayor flexibilidad y control en la presentación de un documento, ya que los estilos pueden ser aplicados a un solo elemento o a una jerarquía completa de elementos. Ademas, cuando se aplican varias reglas a un mismo elemento o clase, se utiliza el principio de cascada para determinar cuál de las reglas tiene prioridad. La cascada en CSS significa que las reglas se aplican de arriba hacia abajo y de izquierda a derecha en el documento.
+
+[Volver al Índice 🔝](#índice)
+## <span style="color: #D67238; font-weight: bold;">Especificidad</span>
+La especificidad en CSS se refiere a la medida en la que una regla se aplica a un elemento específico en un documento. Cuanto más específica es una regla, más prioridad tendrá sobre otras reglas que se aplican al mismo elemento. La especificidad se mide utilizando un sistema de puntos de especificidad, donde cada tipo de selector tiene un valor asignado.
+
+Existen cuatro tipos de selectores que contribuyen a la especificidad:
+
+- Selectores de etiqueta (como "p" para párrafos): tienen un valor de 0,0,0,1.
+- Selectores de clase (como ".myclass"): tienen un valor de 0,0,1,0.
+- Selectores de atributo (como "[type='button']"): tienen un valor de 0,0,1,0.
+- Selectores de ID (como "#myid"): tienen un valor de 0,1,0,0. 
+
+Por ejemplo, si una regla tiene un selector de clase y un selector de ID, su especificidad sería 0,1,1,0. En caso de conflicto entre reglas, la regla con la especificidad más alta tendrá prioridad.
+
+Es importante mencionar que las reglas inline (estilos directamente especificados en el HTML) tienen un valor de especificidad de 1,0,0,0 y siempre tienen prioridad sobre reglas especificadas en hojas de estilo.
+
+[Volver al Índice 🔝](#índice)
+## <span style="color: #D67238; font-weight: bold;">Display: Tipos</span>
+En CSS, el atributo "display" es utilizado para especificar cómo se debe mostrar un elemento en una página web. Los valores más comunes para este atributo incluyen:
+
+- "block": los elementos con este valor se muestran como bloques independientes, ocupando todo el ancho disponible y generando un salto de línea antes y después del elemento. Ejemplos incluyen elementos "div", "h1" y "p".
+- "inline": los elementos con este valor se muestran en línea con el texto circundante, ocupando solo el espacio necesario y no generando salto de línea. Ejemplos incluyen elementos "span" y "a".
+- "inline-block": los elementos con este valor se muestran en línea con el texto circundante, pero pueden tener dimensiones (como ancho y alto) y pueden ser afectados por las propiedades de posicionamiento de CSS.
+- "none": los elementos con este valor no se muestran en absoluto, y no ocupan espacio en la página.
+- "flex": elementos con este valor se comportan como un contenedor flex, permitiendo organizar los elementos hijos de manera flexible.
+- "grid": elementos con este valor se comportan como un contenedor grid, permitiendo organizar los elementos hijos en una rejilla.
+
+Existen otros valores menos comunes para el atributo "display" en CSS, pero estos son los más utilizados en la mayoría de los casos. El valor que se utiliza dependerá del efecto visual deseado y de cómo se desea que el elemento interactúe con los elementos circundantes.
+
+[Volver al Índice 🔝](#índice)
+## <span style="color: #D67238; font-weight: bold;">Diferencias entre margin y padding</span>
+- Margin: Es el espacio vacío alrededor de un elemento. Puede ser especificado en píxeles o porcentajes. Los márgenes pueden ser establecidos en cualquier lado del elemento.
+- Border: Es un borde alrededor de un elemento. Puede ser establecido en cualquier lado del elemento, y puede tener un ancho, un estilo y un color.
+- Padding: Es el espacio vacío dentro de un elemento, entre el contenido y el borde Puede ser especificado en píxeles o porcentajes. Los márgenes pueden ser establecidos en cualquier lado del elemento.
+- Content: Es el contenido dentro de un elemento. Puede ser texto, imágenes, videos, etc.
+
+![padding_margin](./course_demos/media/padding_margin.png "Imagen de margins, borders y paddings de un contenedor")
+
+[Volver al Índice 🔝](#índice)
+## <span style="color: #D67238; font-weight: bold;">Positions</span>
+En CSS, la propiedad "position" se utiliza para establecer la posición de un elemento en relación a su elemento padre o al viewport (ventana de visualización). Existen cuatro valores posibles para esta propiedad:
+
+- "static" (predeterminado): El elemento se posiciona de acuerdo con el flujo normal del documento.
+- "relative": El elemento se posiciona en relación a su posición normal en el flujo del documento. Utilizando las propiedades "top", "bottom", "left" y "right" se puede mover el elemento en cualquiera de estas direcciones.
+- "absolute": El elemento se posiciona en relación al primer elemento padre con posición "relative" o "absolute". Si no hay ningún elemento padre con estas posiciones, el elemento se posiciona en relación al viewport. Utilizando las propiedades "top", "bottom", "left" y "right" se puede mover el elemento en cualquiera de estas direcciones.
+- "fixed": El elemento se posiciona en relación al viewport y se mantiene en su posición aunque la página se desplace. Utilizando las propiedades "top", "bottom", "left" y "right" se puede mover el elemento en cualquiera de estas direcciones.
+
+Además, existe un valor más reciente, "sticky" el cual combina las características de "relative" y "fixed", el elemento se posiciona en relación a su posición normal en el flujo del documento hasta que alcanza un punto específico (definido mediante las propiedades "top" o "bottom") en el viewport, entonces se mantiene fijo en esa posición mientras el usuario sigue desplazando la página.
+
+[Volver al Índice 🔝](#índice)
+## <span style="color: #D67238; font-weight: bold;">Medidas</span>
+### <span style="color: #B05D2E; font-weight: bold;">Medias absolutas</span>
+En CSS existen varias medidas de longitud absolutas, las cuales son utilizadas para especificar el tamaño y posición de los elementos en una página web. Estas son:
+
+- Píxeles (px): Es la medida absoluta más común en CSS. Un píxel es la unidad básica de medida en pantallas de visualización.
+- Point (pt): Es una medida de impresión utilizada principalmente en diseño de impresión. Un punto equivale a 1/72 de pulgada.
+- Inches (in): Es una medida de longitud utilizada principalmente en impresión. 1 pulgada = 96 pixeles.
+- Centimeters (cm): Es una medida de longitud utilizada principalmente en impresión. 1 centímetro = 37.8 pixeles.
+- Millimeters (mm): Es una medida de longitud utilizada principalmente en impresión. 1 milímetro = 3.78 pixeles.
+- Picas (pc): Es una medida de impresión utilizada principalmente en diseño de impresión. Una pica equivale a 1/6 de pulgada.
+
+Es importante tener en cuenta que estas medidas son absolutas y no se adaptan automáticamente al tamaño de la pantalla, por lo que se debe tener cuidado al utilizarlas, especialmente en diseño web adaptable (responsive design).
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Medias relativas</span>
+En CSS existen varias medidas de longitud relativas, las cuales son utilizadas para especificar el tamaño y posición de los elementos en una página web de manera relativa a otro elemento o al tamaño de la pantalla. Estas son:
+
+- Porcentaje ( %): Es una medida relativa al tamaño del elemento padre. Por ejemplo, si el ancho de un elemento padre es de 100px y el ancho de un elemento hijo es del 50%, entonces el ancho del elemento hijo sería de 50px.
+- em: Es una medida relativa al tamaño de la letra del elemento. Por ejemplo, si el tamaño de la letra de un elemento es de 16px y el margen es de 1em, entonces el margen sería de 16px.
+- rem: Es similar a em, pero se refiere al tamaño de la letra del elemento raíz (normalmente el elemento html) en lugar del elemento actual.
+- vw: Es una medida relativa al ancho del viewport (ventana de visualización). 1vw equivale al 1% del ancho del viewport.
+- vh: Es una medida relativa al alto del viewport (ventana de visualización). 1vh equivale al 1% del alto del viewport.
+- vmin: Es una medida relativa al menor valor entre el ancho y el alto del viewport. 1vmin equivale al 1% del menor valor entre el ancho y el alto del viewport.
+- vmax: Es una medida relativa al mayor valor entre el ancho y el alto del viewport. 1vmax equivale al 1% del mayor valor entre el ancho y el alto del viewport.
+
+Al utilizar medidas relativas, los elementos se adaptan automáticamente al tamaño de la pantalla, lo que es útil para el diseño web adaptable (responsive design).
+[Volver al Índice 🔝](#índice)
+## <span style="color: #D67238; font-weight: bold;">Arquitecturas CSS</span>
+Las arquitecturas CSS consisten en manejar el código CSS con una serie de reglas y patrones para facilitar su lectura, mantenibilidad y escabilidad.
+
+El código que has manejado no se asemeja a la realidad, pues deberás manejar varios cientos o miles de líneas de código. Las arquitecturas CSS se encargan de manejar una norma en el código para que cualquiera pueda añadir o quitar funcionalidad sin mucho trabajo.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Objetivos de las arquitecturas de CSS</span>
+Los objetivos de las arquitecturas de CSS son:
+
+- Ser predecible: el código debe ser lo menos complejo posible.
+- Reutilizable: el código debe ser lo menos redundante, para evitar problemas con la especificidad.
+- Mantenible: el código debe ser lo más fácil de manejar para añadir o quitar estilos.
+- Escalable: el código debe ser capaz de crecer.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Buenas prácticas de las arquitecturas de CSS</span>
+Las buenas prácticas de las arquitecturas de CSS son:
+
+- Lineamientos y estándares: definir normas en tu grupo de trabajo de cómo estará escrito el código.
+- Documentación: establecer una breve explicación del código y de los lineamientos, esto sirve especialmente para nuevas personas se familiaricen con lo que deben hacer.
+- Componentes: establecer de manera componetizada cada uno de los elementos de tu página, es decir, manejarlos por partes para después unirlos en un todo.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Arquitectura OOCSS (Object Oriented CSS)</span>
+OOCSS (Object Oriented CSS) es una técnica de diseño de hojas de estilo en cascada que se basa en la creación de objetos reutilizables y separación de estilos de contenido. Esto permite una mayor mantenibilidad, escalabilidad y velocidad en el desarrollo de proyectos web.
+
+Un ejemplo de código OOCSS sería la creación de un objeto "botón" con estilos comunes como tamaño, tipografía y alineación, separados del estilo específico del contenido como color y texto del botón:
+```css
+/* Estilos comunes del objeto "botón" */
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Estilos específicos del contenido */
+.btn-primary {
+    background-color: blue;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: gray;
+    color: white;
+}
+```
+En este ejemplo, se crea un objeto "botón" con estilos comunes que se aplicarán a todos los botones en el sitio. Luego se crean clases específicas para botones primarios y secundarios, que tienen estilos específicos de contenido como el color de fondo y el color del texto. Esto permite una mayor flexibilidad y facilidad para cambiar estilos en todo el sitio, ya que solo se necesita actualizar el objeto "botón" en lugar de buscar y cambiar estilos específicos en varias partes del código.
+
+En el siguiente ejemplo se utilizan las clases creadas en el ejemplo anterior para crear dos botones, uno primario y otro secundario:
+```html
+<button class="btn btn-primary">Enviar</button>
+<button class="btn btn-secondary">Cancelar</button>
+```
+En este caso se esta asignando las clases "btn" y "btn-primary" al primer botón y las clases "btn" y "btn-secondary" al segundo botón. De esta manera se esta aplicando los estilos comunes del objeto "botón" y los estilos específicos del contenido según la clase asignada. El primer botón tendrá un estilo de fondo azul y el texto blanco y el segundo botón tendrá un estilo de fondo gris y el texto blanco.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Arquitectura BEM (Block-Element-Modifier)</span>
+BEM (Block-Element-Modifier) es una metodología de diseño de hojas de estilo en cascada que se centra en la organización y nombrado de clases para mejorar la claridad, la velocidad de desarrollo y la escalabilidad. BEM se basa en la idea de que todas las clases en un proyecto deben ser un bloque, un elemento o un modificador.
+
+Un ejemplo de código CSS usando BEM sería la creación de un bloque "botón" con un elemento "icono" y un modificador "desactivado":
+```css
+/* Bloque "botón" */
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Elemento "icono" dentro del bloque "botón" */
+.btn__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+/* Modificador "desactivado" para el bloque "botón" */
+.btn--disabled {
+    background-color: gray;
+    color: #ccc;
+    cursor: not-allowed;
+}
+```
+En este ejemplo se esta creando un bloque "botón" con un elemento "icono" y un modificador "desactivado". El elemento "icono" es una parte del bloque "botón" y se usa para aplicar estilos al icono dentro del boton. El modificador "desactivado" es un estado o una versión especial del bloque "botón" y se usa para aplicar estilos cuando el boton esta desactivado.
+
+Un ejemplo de código HTML que utilice estas clases sería:
+```html
+<button class="btn btn--disabled">
+  <i class="btn__icon"></i>
+  Enviar
+</button>
+```
+En este caso se esta asignando la clase "btn" al botón, la clase "btn__icon" al icono y la clase "btn--disabled" al botón para aplicar estilos de desactivado. De esta manera se esta aplicando los estilos comunes del bloque "botón", los estilos específicos del elemento "icono" y los estilos específicos del modificador "desactivado" según las clases asignadas.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Arquitectura SMACSS (Scalable and Modular Architecture for CSS)</span>
+SMACSS (Scalable and Modular Architecture for CSS) es una metodología de diseño de hojas de estilo en cascada que se centra en la organización y estructuración de las hojas de estilo para mejorar la escalabilidad y la flexibilidad en proyectos web. SMACSS se divide en cinco categorías: Base, Layout, Module, State y Theme.
+
+Un ejemplo de código CSS usando SMACSS sería la creación de un estilo base para el tipo de letra, un estilo de layout para la estructura de la página y un estilo de módulo para un botón:
+```css
+/* Estilo base para el tipo de letra */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Estilo de layout para la estructura de la página */
+#header, #footer, #main {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* Estilo de módulo para un botón */
+.btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+```
+En este ejemplo se esta separando los estilos en diferentes categorías. Los estilos de base se refieren a los estilos comunes de la página, como el tipo de letra. Los estilos de layout se refieren a la estructura de la página, como la disposición de los elementos. Los estilos de módulos se refieren a los elementos individuales de la página, como un botón.
+
+Un ejemplo de código HTML que utilice estas clases sería:
+```html
+<header id="header">
+  <button class="btn">Enviar</button>
+</header>
+<main id="main">
+  <p>Contenido principal</p>
+</main>
+<footer id="footer">
+  <p>Pie de página</p>
+</footer>
+```
+En este caso se esta asignando las clases "body" al cuerpo del HTML, las clases "header", "footer" y "main" para aplicar estilos de layout y la clase "btn" para aplicar estilos de módulo. De esta manera se esta aplicando los estilos comunes de base, estilos específicos de layout y estilos específicos de módulo según las clases asignadas.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Arquitectura ITCSS (Inverted Triangle CSS)</span>
+ITCSS (Inverted Triangle CSS) es una metodología de diseño de hojas de estilo en cascada que se centra en la organización y estructuración de las hojas de estilo para mejorar la escalabilidad, la claridad y la facilidad de mantenimiento en proyectos web. ITCSS se divide en varios niveles, cada uno con un propósito específico y una prioridad diferente.
+
+Un ejemplo de código CSS usando ITCSS sería la creación de un estilo global para el tipo de letra, un estilo específico para un botón y un estilo para una clase personalizada:
+```css
+/* Estilo global para el tipo de letra */
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Estilo específico para un botón */
+.btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Estilo para una clase personalizada */
+.my-class {
+    background-color: pink;
+}
+```
+En este ejemplo se esta separando los estilos en diferentes niveles. El nivel global se refiere a los estilos comunes de la página, como el tipo de letra. El nivel específico se refieren a los elementos individuales de la página, como un botón. El nivel personalizado se refiere a las clases específicas que pueden ser utilizadas en diferentes partes de la página.
+
+Un ejemplo de código HTML que utilice estas clases sería:
+```html
+<button class="btn my-class">Enviar</button>
+```
+En este caso se esta asignando las clases "btn" y "my-class" al botón para aplicar estilos de específico y personalizado. De esta manera se esta aplicando los estilos comunes globales, estilos específicos y estilos personalizados según las clases asignadas.
+
+Es importante destacar que ITCSS es una metodología de organización de estilos que propone una estructura para facilitar la escalabilidad y el mantenimiento de los mismos, pero no es una técnica de diseño en sí misma, sino que se puede combinar con otras metodologías o patrones de diseño como BEM o OOCSS.
+
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Arquitectura Atomic Design</span>
+Atomic Design es una metodología de diseño que se centra en la construcción de un sistema de diseño escalable y modular a través de la creación de elementos básicos y compuestos. El proceso de diseño se divide en cinco fases: Átomos, moléculas, organismos, plantillas y páginas.
+
+Un ejemplo de código CSS usando Atomic Design sería la creación de un estilo para un átomo (botón) y un estilo para un organismo (formulario de contacto):
+```css
+/* Estilo para un átomo (botón) */
+.btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Estilo para un organismo (formulario de contacto) */
+.contact-form {
+    width: 400px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* estilos para los elementos del formulario */
+.contact-form label, 
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+```
+En este ejemplo se esta separando los estilos en diferentes niveles. El átomo sería un elemento básico como un botón, y el organismo es un conjunto de átomos que componen una estructura más compleja como un formulario de contacto.
+
+Un ejemplo de código HTML que utilice estas clases sería:
+```html
+<form class="contact-form">
+  <label for="name">Nombre</label>
+  <input type="text" id="name" name="name">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email">
+  <label for="message">Mensaje</label>
+  <textarea id="message" name="message"></textarea>
+  <button class="btn">Enviar</button>
+</form>
+```
+En este caso se esta asignando la clase "contact-form" al formulario para aplicar estilos de organismo y la clase "btn" al botón para aplicar estilos de átomo. De esta manera se esta aplicando los estilos específicos de organismo y estilos específicos de átomo según las clases asignadas.
+
+Al utilizar la metodología de Atomic Design se puede construir un sistema de diseño escalable y modular, donde se pueden reutilizar elementos básicos y compuestos en diferentes niveles y páginas del sitio web.
+
 [Volver al Índice 🔝](#índice)
 
 

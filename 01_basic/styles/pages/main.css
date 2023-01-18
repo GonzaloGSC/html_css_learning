@@ -378,6 +378,8 @@
     text-align: left;
     margin-top: 40px;
     color: var(--text_color);
+    inline-size: -webkit-min-content;
+    inline-size: -moz-min-content;
     inline-size: min-content;
     line-height: initial;
     transition: 1s;
@@ -393,6 +395,8 @@
     text-align: right;
     margin-top: 40px;
     color: var(--text_color);
+    inline-size: -webkit-min-content;
+    inline-size: -moz-min-content;
     inline-size: min-content;
     line-height: initial;
     transition: 1s;
