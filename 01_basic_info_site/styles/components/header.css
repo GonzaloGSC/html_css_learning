@@ -40,7 +40,7 @@ header>div>div>img {
     position: fixed;
     top: 80px;
     translate: -135px;
-    background-image: url(/01_basic/media/images/dialog_01.png);
+    background-image: url(../../media/images/dialog_01.png);
     background-size: 92px 31px;
     background-repeat: no-repeat;
     background-attachment: local;

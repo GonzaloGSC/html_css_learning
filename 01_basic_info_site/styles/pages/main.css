@@ -102,7 +102,7 @@
 }
 
 #parallax_main {
-    background-image: url("/01_basic/media/images/site_background_04.jpg");
+    background-image: url("../../media/images/site_background_04.jpg");
     top: -70px;
     height: 4728px;
     ;
@@ -186,173 +186,173 @@
 }
 
 #parallax_games_1 {
-    background-image: url("/01_basic/media/images/games_w_09.png");
+    background-image: url("../../media/images/games_w_09.png");
 }
 
 #parallax_games_2 {
-    background-image: url("/01_basic/media/images/games_w_04.png");
+    background-image: url("../../media/images/games_w_04.png");
     top: calc(400px + var(--images_spacing)*1);
 }
 
 #parallax_games_3 {
-    background-image: url("/01_basic/media/images/games_w_06.png");
+    background-image: url("../../media/images/games_w_06.png");
     top: calc(400px + var(--images_spacing)*2);
 }
 
 #parallax_games_4 {
-    background-image: url("/01_basic/media/images/games_w_01.png");
+    background-image: url("../../media/images/games_w_01.png");
     top: calc(400px + var(--images_spacing)*3);
 }
 
 #parallax_games_5 {
-    background-image: url("/01_basic/media/images/games_w_05.png");
+    background-image: url("../../media/images/games_w_05.png");
     top: calc(400px + var(--images_spacing)*4);
 }
 
 #parallax_games_6 {
-    background-image: url("/01_basic/media/images/games_w_03.png");
+    background-image: url("../../media/images/games_w_03.png");
     top: calc(400px + var(--images_spacing)*5);
 }
 
 #parallax_games_7 {
-    background-image: url("/01_basic/media/images/games_w_07.png");
+    background-image: url("../../media/images/games_w_07.png");
     top: calc(400px + var(--images_spacing)*6);
 }
 
 #parallax_games_8 {
-    background-image: url("/01_basic/media/images/games_w_08.png");
+    background-image: url("../../media/images/games_w_08.png");
     top: calc(400px + var(--images_spacing)*7);
 }
 
 #parallax_games_9 {
-    background-image: url("/01_basic/media/images/games_w_02.png");
+    background-image: url("../../media/images/games_w_02.png");
     top: calc(400px + var(--images_spacing)*8);
 }
 
 #parallax_series_1 {
-    background-image: url("/01_basic/media/images/series_w_01.jpg");
+    background-image: url("../../media/images/series_w_01.jpg");
     top: calc(1600px + var(--images_spacing)*9);
 }
 
 #parallax_series_2 {
-    background-image: url("/01_basic/media/images/series_w_02.jpg");
+    background-image: url("../../media/images/series_w_02.jpg");
     top: calc(1600px + var(--images_spacing)*10);
 }
 
 #parallax_series_3 {
-    background-image: url("/01_basic/media/images/series_w_03.jpg");
+    background-image: url("../../media/images/series_w_03.jpg");
     top: calc(1600px + var(--images_spacing)*11);
 }
 
 #parallax_series_4 {
-    background-image: url("/01_basic/media/images/series_w_04.jpg");
+    background-image: url("../../media/images/series_w_04.jpg");
     top: calc(1600px + var(--images_spacing)*12);
 }
 
 #parallax_series_5 {
-    background-image: url("/01_basic/media/images/series_w_05.jpg");
+    background-image: url("../../media/images/series_w_05.jpg");
     top: calc(1600px + var(--images_spacing)*13);
 }
 
 #parallax_series_6 {
-    background-image: url("/01_basic/media/images/series_w_06.jpg");
+    background-image: url("../../media/images/series_w_06.jpg");
     top: calc(1600px + var(--images_spacing)*14);
 }
 
 #parallax_series_7 {
-    background-image: url("/01_basic/media/images/series_w_07.jpg");
+    background-image: url("../../media/images/series_w_07.jpg");
     top: calc(1600px + var(--images_spacing)*15);
 }
 
 #parallax_series_8 {
-    background-image: url("/01_basic/media/images/series_w_08.jpg");
+    background-image: url("../../media/images/series_w_08.jpg");
     top: calc(1600px + var(--images_spacing)*16);
 }
 
 #parallax_series_9 {
-    background-image: url("/01_basic/media/images/series_w_09.jpg");
+    background-image: url("../../media/images/series_w_09.jpg");
     top: calc(1600px + var(--images_spacing)*17);
 }
 
 #parallax_films_1 {
-    background-image: url("/01_basic/media/images/films_w_01.jpg");
+    background-image: url("../../media/images/films_w_01.jpg");
     top: calc(2800px + var(--images_spacing)*18);
 }
 
 #parallax_films_2 {
-    background-image: url("/01_basic/media/images/films_w_02.jpg");
+    background-image: url("../../media/images/films_w_02.jpg");
     top: calc(2800px + var(--images_spacing)*19);
 }
 
 #parallax_films_3 {
-    background-image: url("/01_basic/media/images/films_w_03.jpg");
+    background-image: url("../../media/images/films_w_03.jpg");
     top: calc(2800px + var(--images_spacing)*20);
 }
 
 #parallax_films_4 {
-    background-image: url("/01_basic/media/images/films_w_04.jpg");
+    background-image: url("../../media/images/films_w_04.jpg");
     top: calc(2800px + var(--images_spacing)*21);
 }
 
 #parallax_films_5 {
-    background-image: url("/01_basic/media/images/films_w_05.jpg");
+    background-image: url("../../media/images/films_w_05.jpg");
     top: calc(2800px + var(--images_spacing)*22);
 }
 
 #parallax_films_6 {
-    background-image: url("/01_basic/media/images/films_w_06.jpg");
+    background-image: url("../../media/images/films_w_06.jpg");
     top: calc(2800px + var(--images_spacing)*23);
 }
 
 #parallax_films_7 {
-    background-image: url("/01_basic/media/images/films_w_07.jpg");
+    background-image: url("../../media/images/films_w_07.jpg");
     top: calc(2800px + var(--images_spacing)*24);
 }
 
 #parallax_films_8 {
-    background-image: url("/01_basic/media/images/films_w_08.jpg");
+    background-image: url("../../media/images/films_w_08.jpg");
     top: calc(2800px + var(--images_spacing)*25);
 }
 
 #parallax_films_9 {
-    background-image: url("/01_basic/media/images/films_w_09.jpg");
+    background-image: url("../../media/images/films_w_09.jpg");
     top: calc(2800px + var(--images_spacing)*26);
 }
 
 #parallax_things_1 {
-    background-image: url("/01_basic/media/images/things_w_01.jpg");
+    background-image: url("../../media/images/things_w_01.jpg");
 }
 
 #parallax_things_2 {
-    background-image: url("/01_basic/media/images/things_w_02.jpg");
+    background-image: url("../../media/images/things_w_02.jpg");
 }
 
 #parallax_things_3 {
-    background-image: url("/01_basic/media/images/things_w_03.jpg");
+    background-image: url("../../media/images/things_w_03.jpg");
 }
 
 #parallax_things_4 {
-    background-image: url("/01_basic/media/images/things_w_04.jpg");
+    background-image: url("../../media/images/things_w_04.jpg");
 }
 
 #parallax_things_5 {
-    background-image: url("/01_basic/media/images/things_w_05.jpg");
+    background-image: url("../../media/images/things_w_05.jpg");
 }
 
 #parallax_things_6 {
-    background-image: url("/01_basic/media/images/things_w_06.jpg");
+    background-image: url("../../media/images/things_w_06.jpg");
 }
 
 #parallax_things_7 {
-    background-image: url("/01_basic/media/images/things_w_07.jpg");
+    background-image: url("../../media/images/things_w_07.jpg");
 }
 
 #parallax_things_8 {
-    background-image: url("/01_basic/media/images/things_w_08.jpg");
+    background-image: url("../../media/images/things_w_08.jpg");
 }
 
 #parallax_things_9 {
-    background-image: url("/01_basic/media/images/things_w_09.jpg");
+    background-image: url("../../media/images/things_w_09.jpg");
 }
 
 .right_div {
@@ -378,8 +378,6 @@
     text-align: left;
     margin-top: 40px;
     color: var(--text_color);
-    inline-size: -webkit-min-content;
-    inline-size: -moz-min-content;
     inline-size: min-content;
     line-height: initial;
     transition: 1s;
@@ -395,8 +393,6 @@
     text-align: right;
     margin-top: 40px;
     color: var(--text_color);
-    inline-size: -webkit-min-content;
-    inline-size: -moz-min-content;
     inline-size: min-content;
     line-height: initial;
     transition: 1s;

@@ -34,6 +34,7 @@ Repositorio enfocado a almacenar el conocimiento adquirido durante diversos curs
     - [Selectores de atributo](#selectores-de-atributo)
     - [Selectores de hijo](#selectores-de-hijo)
     - [Selectores de hermano](#selectores-de-hermano)
+    - [Selectores de hermanos adyacentes](#selectores-de-hermanos-adyacentes)
     - [Selectores de precedencia](#selectores-de-precedencia)
     - [Selectores de pseudoclases](#selectores-de-pseudoclases)
     - [Selectores de pseudoelementos](#selectores-de-pseudoelementos)
@@ -257,6 +258,25 @@ h1 + p {
     color: black;
 }
 ```
+[Volver al Índice 🔝](#índice)
+### <span style="color: #B05D2E; font-weight: bold;">Selectores de hermanos adyacentes</span>
+Este selector permite seleccionar elementos HTML que están precedidos por otro elemento específico en el mismo nivel de jerarquía.
+
+Por ejemplo, si queremos seleccionar todos los párrafos que están precedidos por un encabezado h2, podríamos utilizar el selector ~ de la siguiente manera:
+```css
+h2 ~ p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+```
+En este ejemplo, todos los párrafos que estén después de un encabezado h2 en el mismo nivel de jerarquía tendrán un tamaño de fuente de 14px y un margen inferior de 20px.
+```html
+<h2>Título</h2>
+<p>Este es el primer párrafo</p>
+<p>Este es el segundo párrafo</p>
+```
+En este caso el primer y segundo párrafo tienen estilo aplicado ya que están precedidos por el h2.
+
 [Volver al Índice 🔝](#índice)
 ### <span style="color: #B05D2E; font-weight: bold;">Selectores de precedencia</span>
 Seleccionan elementos en función de la precedencia de sus selectores. Por ejemplo, el selector div p seleccionaría todos los elementos "p" que estén dentro de un elemento "div", mientras que el selector div > p sólo seleccionaría los elementos "p" que sean hijos directos de un elemento "div". Un espacio en blanco se utiliza para seleccionar todos los elementos con una clase específica dentro de un elemento con otra clase, independientemente de su nivel de anidamiento.
