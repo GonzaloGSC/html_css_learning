@@ -1,23 +1,23 @@
-document.addEventListener("input", event =>{
-    if(event.target.id === "my_account_form_email1"){
+document.addEventListener("input", event => {
+    if (event.target.id === "my_account_form_email1") {
         event.target.className = "";
     };
-    if(event.target.id === "my_account_form_email2"){
+    if (event.target.id === "my_account_form_email2") {
         event.target.className = "";
     };
-    if(event.target.id === "my_account_form_name"){
+    if (event.target.id === "my_account_form_name") {
         event.target.className = "";
     };
-    if(event.target.id === "my_account_form_password1"){
+    if (event.target.id === "my_account_form_password1") {
         event.target.className = "";
     };
-    if(event.target.id === "my_account_form_password2"){
+    if (event.target.id === "my_account_form_password2") {
         event.target.className = "";
     };
-    if(event.target.id === "my_account_form_gender"){
+    if (event.target.id === "my_account_form_gender") {
         event.target.className = "";
-    };  
-    if(event.target.id === "my_account_form_terms"){
+    };
+    if (event.target.id === "my_account_form_terms") {
         event.target.className = "";
     };
 });
@@ -92,15 +92,27 @@ function FuncMyAccountFormSubmited(event) {
         let actualUsers = [];
         if (localStorage.getItem("users")) {
             actualUsers = JSON.parse(localStorage.getItem("users"));
-            if (actualUsers.find(e => e.email === formData.email)) {
+            if (actualUsers.find(e => e.email1 === formData.email1)) {
                 console.log("ERROR");
+                validated = false;
+                inputEmail1.className = "is-invalid";
             } else {
                 actualUsers = [...actualUsers, formData];
                 localStorage.setItem("users", JSON.stringify(actualUsers));
+                inputEmail1.className = "";
             };
         } else {
             actualUsers = [formData];
             localStorage.setItem("users", JSON.stringify(actualUsers));
+        };
+        if (validated) {
+            inputEmail1.value = "";
+            inputEmail2.value = "";
+            inputName.value = "";
+            inputPassw1.value = "";
+            inputPassw2.value = "";
+            selectGender.value = "";
+            inputTerms.value = false;
         };
     };
 };

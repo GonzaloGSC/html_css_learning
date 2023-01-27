@@ -3,10 +3,14 @@
     padding: 0;
 }
 
+.my-account-container{
+    display: flex;
+}
+
 @media (max-width: 1000px) {
-    .my-account-container .custom-row {
+    /* .my-account-container .custom-row {
         display: block;
-    }
+    } */
 
     #my_account_form>div:nth-child(5)>div,
     #my_account_form>div.custom-row.f--justify-c {

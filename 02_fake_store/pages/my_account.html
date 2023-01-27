@@ -1,60 +1,60 @@
-<div class="my-account-container custom-row f--justify-c">
+<div class="my-account-container f--justify-c">
     <div class="custom-col">
-        <h1 class="t--align-c">Crear cuenta</h1>
+        <h1 class="t--align-c">Create Account</h1>
         <form id="my_account_form">
             <div class="custom-row f--justify-l">
                 <div class="custom-col">
-                    <label for="my_account_form_name">*Nombre:</label>
+                    <label class="t--12pt t--medium" for="my_account_form_name">*Name:</label>
                     <input type="text" name="name" id="my_account_form_name" required minlength="4" maxlength="50">
                 </div>
             </div>
             <div class="custom-row f--justify-l">
                 <div class="custom-col">
-                    <label for="my_account_form_email">*Email:</label>
+                    <label class="t--12pt t--medium" for="my_account_form_email">*Email:</label>
                     <input type="email" name="email1" id="my_account_form_email1" required>
                 </div>
                 <div class="custom-col">
-                    <label for="my_account_form_email">*Repita email:</label>
+                    <label class="t--12pt t--medium" for="my_account_form_email">*Repeat email:</label>
                     <input type="email" name="email2" id="my_account_form_email2" required onpaste="return false">
                 </div>
             </div>
             <div class="custom-row f--justify-l">
                 <div class="custom-col">
-                    <label for="my_account_form_password1">*Contraseña:</label>
+                    <label class="t--12pt t--medium" for="my_account_form_password1">*Password:</label>
                     <input type="password" name="password1" id="my_account_form_password1" required minlength="4"
                         maxlength="10">
                 </div>
                 <div class="custom-col">
-                    <label for="my_account_form_password2">*Repita contraseña:</label>
+                    <label class="t--12pt t--medium" for="my_account_form_password2">*Repeat password:</label>
                     <input type="password" name="password2" id="my_account_form_password2" required minlength="4"
                         maxlength="10" onpaste="return false">
                 </div>
             </div>
             <div class="custom-row f--justify-l">
                 <div class="custom-col">
-                    <label for="my_account_form_gender">Género:</label>
+                    <label class="t--12pt t--medium" for="my_account_form_gender">Gender:</label>
                     <select name="gender" id="my_account_form_gender">
-                        <option value="" selected>Sin especificar</option>
-                        <option value="male">Hombre</option>
-                        <option value="female">Mujer</option>
-                        <option value="other">Otro</option>
+                        <option value="" selected>Do not answer</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
                     </select>
                 </div>
             </div>
             <div class="custom-row f--justify-l">
                 <div class="custom-row f--justify-l">
                     <div class="custom-col">
-                        <label for="my_account_form_terms">*Acepto los términos y condiciones:</label>
+                        <label class="t--12pt t--regular" for="">*I accept the <a href="#top">terms and conditions</a>:</label>
                     </div>
                     <div class="custom-col">
-                        <input type="checkbox" id="my_account_form_terms" name="terms" class="is-invalid"><br>
+                        <input type="checkbox" id="my_account_form_terms" name="terms">
                     </div>
                 </div>
             </div>
             <div class="custom-row f--justify-c">
                 <div class="custom-col">
-                    <button class="t--blod t--16pt t--line-40pt" type="submit"
-                        onclick="FuncMyAccountFormSubmited(event)">Crear cuenta</button>
+                    <button class="t--blod t--12pt t--line-32pt s--white-color s--success-backg" type="submit"
+                        onclick="FuncMyAccountFormSubmited(event)">Create account</button>
                 </div>
             </div>
         </form>
