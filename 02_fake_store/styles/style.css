@@ -126,6 +126,10 @@ input.is-invalid {
     justify-content: space-between;
 }
 
+.f--justify-sa {
+    justify-content: space-around;
+}
+
 .s--margin-4px {
     margin: 4px;
 }
@@ -142,6 +146,22 @@ input.is-invalid {
     margin: 16px;
 }
 
+.s--padding-4px {
+    padding: 4px;
+}
+
+.s--padding-8px {
+    padding: 8px;
+}
+
+.s--padding-12px {
+    padding: 12px;
+}
+
+.s--padding-16px {
+    margin: 16px;
+}
+
 .s--align-c {
     align-self: center;
 }
@@ -154,6 +174,14 @@ input.is-invalid {
     color: var(--color_white);
 }
 
+.s--black-color {
+    color: var(--color_black);
+}
+
+.s--dark-color {
+    color: var(--color_dark);
+}
+
 .s--success-backg {
     background: var(--color_hospital_green);
 }
@@ -164,6 +192,10 @@ input.is-invalid {
 
 .s--success-border {
     border: 2px solid var(--color_hospital_green);
+}
+
+.s--white-border {
+    border: 2px solid var(--color_white);
 }
 
 .s--width-100px {

@@ -1,11 +1,30 @@
-function f_change_page(page_html, event) {
+let show_menu = false;
+
+function FuncChangePage(page_html, event) {
     event.preventDefault();
-    if (page_html != "index.html") {
-        document.getElementById('content_div_main').style.display = "none";
-        document.getElementById('content_div').style.display = "flex";
-        $('#content_div').load("/01_basic_info_site/pages/" + page_html);
+    $('#content_div').load("/02_fake_store/pages/" + page_html);
+};
+
+function FuncNavMenuButton() {
+    if (show_menu) {
+        document.getElementById("hidden-nav").style.display = "none";
     } else {
-        document.getElementById('content_div_main').style.display = "flex";
-        document.getElementById('content_div').style.display = "none";
+        document.getElementById("hidden-nav").style.display = "flex";
+    };
+    show_menu = !show_menu;
+};
+
+function FuncCloseNavMenuButton() {
+    if (show_menu) {
+        document.getElementById("hidden-nav").style.display = "none";
+        show_menu = !show_menu;
     };
 };
+
+window.addEventListener('click', function (e) {
+    if (document.getElementById('nav_menu_button').contains(e.target)) {
+        FuncNavMenuButton();
+    } else {
+        FuncCloseNavMenuButton();
+    };
+});

@@ -1,4 +1,4 @@
-#my_account_form_terms {
+#create_account_form_terms {
     margin: 0;
     padding: 0;
 }
@@ -12,8 +12,8 @@
         display: block;
     } */
 
-    #my_account_form>div:nth-child(5)>div,
-    #my_account_form>div.custom-row.f--justify-c {
+    #create_account_form>div:nth-child(5)>div,
+    #create_account_form>div.custom-row.f--justify-c {
         display: flex;
         justify-content: center;
         width: 250px;

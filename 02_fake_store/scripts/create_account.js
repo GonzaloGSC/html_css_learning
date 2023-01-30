@@ -1,23 +1,23 @@
 document.addEventListener("input", event => {
-    if (event.target.id === "my_account_form_email1") {
+    if (event.target.id === "create_account_form_email1") {
         event.target.className = "";
     };
-    if (event.target.id === "my_account_form_email2") {
+    if (event.target.id === "create_account_form_email2") {
         event.target.className = "";
     };
-    if (event.target.id === "my_account_form_name") {
+    if (event.target.id === "create_account_form_name") {
         event.target.className = "";
     };
-    if (event.target.id === "my_account_form_password1") {
+    if (event.target.id === "create_account_form_password1") {
         event.target.className = "";
     };
-    if (event.target.id === "my_account_form_password2") {
+    if (event.target.id === "create_account_form_password2") {
         event.target.className = "";
     };
-    if (event.target.id === "my_account_form_gender") {
+    if (event.target.id === "create_account_form_gender") {
         event.target.className = "";
     };
-    if (event.target.id === "my_account_form_terms") {
+    if (event.target.id === "create_account_form_terms") {
         event.target.className = "";
     };
 });
@@ -37,13 +37,13 @@ function FuncMyAccountFormSubmited(event) {
     };
     let validated = true;
     let reg = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
-    let inputEmail1 = document.getElementById("my_account_form_email1");
-    let inputEmail2 = document.getElementById("my_account_form_email2");
-    let inputName = document.getElementById("my_account_form_name");
-    let inputPassw1 = document.getElementById("my_account_form_password1");
-    let inputPassw2 = document.getElementById("my_account_form_password2");
-    let selectGender = document.getElementById("my_account_form_gender");
-    let inputTerms = document.getElementById("my_account_form_terms");
+    let inputEmail1 = document.getElementById("create_account_form_email1");
+    let inputEmail2 = document.getElementById("create_account_form_email2");
+    let inputName = document.getElementById("create_account_form_name");
+    let inputPassw1 = document.getElementById("create_account_form_password1");
+    let inputPassw2 = document.getElementById("create_account_form_password2");
+    let selectGender = document.getElementById("create_account_form_gender");
+    let inputTerms = document.getElementById("create_account_form_terms");
 
     if (!reg.test(formData.email1)) {
         inputEmail1.className = "is-invalid";

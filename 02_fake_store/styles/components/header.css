@@ -9,11 +9,13 @@
     flex-wrap: nowrap;
     white-space: nowrap;
     width: 100%;
-    border-bottom: inset;
+    /* border-bottom: inset; */
+    border-bottom: 2px solid var(--color_very_light_pink);
+    background: var(--color_white);
 }
 
 .header-logo-image {
-    width: 100px;
+    width: 160px;
 }
 
 .header-nav {
@@ -22,7 +24,6 @@
     justify-content: space-evenly;
     height: 100%;
     align-items: center;
-    /* margin-right: 150px; */
 }
 
 .header-nav>a {
@@ -35,8 +36,7 @@
 
 .header-nav>a:hover,
 .header-nav>a:focus {
-    color: var(--header_buttons_border_color);
-    text-decoration: none;
+    color: var(--color_hospital_green);
     transition: 0.25s;
     outline: none;
 }
@@ -55,21 +55,46 @@
     margin-right: 20px;
 }
 
+#nav_menu_button:focus,
+#nav_menu_button:hover {
+    color: var(--color_hospital_green);
+    cursor: pointer;
+}
+
 #hidden-nav-menu {
     display: none;
 }
 
 #hidden-nav {
-    display: flex;
+    display: none;
     position: fixed;
     flex-direction: column;
-    top: 74px;
-    background: aquamarine;
-    padding: 20px;
+    top: 75px;
+    background: var(--color_white);
+    padding: 5px;
     translate: 0px;
+    border: 2px solid var(--color_very_light_pink);
 }
 
-#nav_menu_button{
+#hidden-nav>a {
+    border-bottom: 2px solid var(--color_hospital_green);
+    width: 200px;
+    color: var(--color_dark);
+    text-decoration: None;
+}
+
+#hidden-nav>a:last-child {
+    border-bottom: none;
+}
+
+#hidden-nav>a:hover,
+#hidden-nav>a:focus {
+    color: var(--color_hospital_green);
+    transition: 0.25s;
+    outline: none;
+}
+
+#nav_menu_button {
     padding: 20px;
     align-self: center;
 }
