@@ -20,6 +20,9 @@ document.addEventListener("input", event => {
     if (event.target.id === "create_account_form_terms") {
         event.target.className = "";
     };
+    if (event.target.id === "create_account_form_privacy") {
+        event.target.className = "";
+    };
 });
 
 
@@ -34,6 +37,7 @@ function FuncMyAccountFormSubmited(event) {
         password1: elements.password1.value,
         password2: elements.password2.value,
         terms: elements.terms.checked,
+        privacy: elements.privacy.checked,
     };
     let validated = true;
     let reg = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
@@ -44,6 +48,7 @@ function FuncMyAccountFormSubmited(event) {
     let inputPassw2 = document.getElementById("create_account_form_password2");
     let selectGender = document.getElementById("create_account_form_gender");
     let inputTerms = document.getElementById("create_account_form_terms");
+    let inputPrivacy = document.getElementById("create_account_form_privacy");
 
     if (!reg.test(formData.email1)) {
         inputEmail1.className = "is-invalid";
@@ -87,6 +92,12 @@ function FuncMyAccountFormSubmited(event) {
     } else {
         inputTerms.className = "";
     };
+    if (!formData.privacy) {
+        inputPrivacy.className = "is-invalid";
+        validated = false;
+    } else {
+        inputPrivacy.className = "";
+    };
 
     if (validated) {
         let actualUsers = [];
@@ -112,7 +123,8 @@ function FuncMyAccountFormSubmited(event) {
             inputPassw1.value = "";
             inputPassw2.value = "";
             selectGender.value = "";
-            inputTerms.value = false;
+            inputTerms.checked = false;
+            inputPrivacy.checked = false;
         };
     };
 };

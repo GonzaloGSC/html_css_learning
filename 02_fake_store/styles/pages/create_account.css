@@ -3,19 +3,26 @@
     padding: 0;
 }
 
-.my-account-container{
+.my-account-container {
     display: flex;
 }
 
-@media (max-width: 1000px) {
-    /* .my-account-container .custom-row {
-        display: block;
-    } */
+#create_account_form>div:nth-child(5)>div>div:nth-child(1),
+#create_account_form>div:nth-child(6)>div>div:nth-child(1) {
+    width: 250px;
+}
 
+@media (max-width: 1000px) {
     #create_account_form>div:nth-child(5)>div,
+    #create_account_form>div:nth-child(6)>div,
     #create_account_form>div.custom-row.f--justify-c {
         display: flex;
         justify-content: center;
         width: 250px;
+    }
+
+    #create_account_form>div:nth-child(5)>div>div:nth-child(1),
+    #create_account_form>div:nth-child(6)>div>div:nth-child(1) {
+        width: 200px;
     }
 }

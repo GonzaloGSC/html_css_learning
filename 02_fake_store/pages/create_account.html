@@ -43,18 +43,31 @@
             </div>
             <div class="custom-row f--justify-l">
                 <div class="custom-row f--justify-l">
-                    <div class="custom-col">
-                        <label class="t--12pt t--regular" for="">*I accept the <a href="#top">terms and conditions</a>:</label>
+                    <div class="custom-col s--margin-4px s--margin-l-20px">
+                        <label class="t--12pt t--regular" for="">*I accept the <a
+                                onclick="FuncOpenModal('modal_1')">terms and
+                                conditions</a>:</label>
                     </div>
-                    <div class="custom-col">
+                    <div class="custom-col s--margin-4px s--margin-l-8px">
                         <input type="checkbox" id="create_account_form_terms" name="terms">
+                    </div>
+                </div>
+            </div>
+            <div class="custom-row f--justify-l">
+                <div class="custom-row f--justify-l">
+                    <div class="custom-col s--margin-4px s--margin-l-20px">
+                        <label class="t--12pt t--regular" for="">*I accept the <a
+                                onclick="FuncOpenModal('modal_2')">privacy policies</a>:</label>
+                    </div>
+                    <div class="custom-col s--margin-4px s--margin-l-8px">
+                        <input type="checkbox" id="create_account_form_privacy" name="privacy">
                     </div>
                 </div>
             </div>
             <div class="custom-row f--justify-c">
                 <div class="custom-col">
-                    <button class="t--blod t--12pt t--line-32pt s--white-color s--success-backg" type="submit"
-                        onclick="FuncMyAccountFormSubmited(event)">Create account</button>
+                    <button class="t--blod t--12pt t--line-32pt s--white-color s--success-backg s--white-border"
+                        type="submit" onclick="FuncMyAccountFormSubmited(event)">Create account</button>
                 </div>
             </div>
         </form>
