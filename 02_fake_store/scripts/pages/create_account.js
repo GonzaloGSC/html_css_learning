@@ -1,3 +1,5 @@
+import { FuncCreateToast } from '../components/toast.js';
+
 document.addEventListener("input", event => {
     if (event.target.id === "create_account_form_email1") {
         event.target.className = "";
@@ -26,7 +28,8 @@ document.addEventListener("input", event => {
 });
 
 
-function FuncMyAccountFormSubmited(event) {
+
+export function FuncCreateAccountFormSubmited(event) {
     event.preventDefault();
     let elements = event.target.form.elements;
     const formData = {
@@ -49,56 +52,63 @@ function FuncMyAccountFormSubmited(event) {
     let selectGender = document.getElementById("create_account_form_gender");
     let inputTerms = document.getElementById("create_account_form_terms");
     let inputPrivacy = document.getElementById("create_account_form_privacy");
-
+    let errorMessage = "";
     if (!reg.test(formData.email1)) {
         inputEmail1.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "Invalid email. ";
     } else {
         inputEmail1.className = "";
     };
     if (formData.email1 != formData.email2) {
         inputEmail2.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "The two emails are not the same. ";
     } else {
         inputEmail2.className = "";
     };
     if (!["", "male", "female", "other"].includes(formData.gender)) {
         selectGender.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "The gender value does not correspond to the options. ";
     } else {
         selectGender.className = "";
     };
     if (formData.name.length < 4 || formData.name.length > 50) {
         inputName.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "The name must have 4 to 50 characters. ";
     } else {
         inputName.className = "";
     };
     if (formData.password1.length < 4 || formData.password1.length > 10) {
         inputPassw1.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "The password must have 4 to 10 characters. ";
     } else {
         inputPassw1.className = "";
     };
     if (formData.password1 != formData.password2) {
         inputPassw2.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "The two passwords are not the same. ";
     } else {
         inputPassw2.className = "";
     };
     if (!formData.terms) {
         inputTerms.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "You have to accept the Terms and Conditions. ";
     } else {
         inputTerms.className = "";
     };
     if (!formData.privacy) {
         inputPrivacy.className = "is-invalid";
         validated = false;
+        errorMessage = errorMessage + "You have to accept the Privacy Policies. ";
     } else {
         inputPrivacy.className = "";
     };
-
     if (validated) {
         let actualUsers = [];
         if (localStorage.getItem("users")) {
@@ -107,6 +117,7 @@ function FuncMyAccountFormSubmited(event) {
                 console.log("ERROR");
                 validated = false;
                 inputEmail1.className = "is-invalid";
+                FuncCreateToast("info", "Input error:", "The email entered is already registered.");
             } else {
                 actualUsers = [...actualUsers, formData];
                 localStorage.setItem("users", JSON.stringify(actualUsers));
@@ -125,6 +136,9 @@ function FuncMyAccountFormSubmited(event) {
             selectGender.value = "";
             inputTerms.checked = false;
             inputPrivacy.checked = false;
+            FuncCreateToast("success", "Message:", "User created successfully.");
         };
+    } else{
+        FuncCreateToast("warning", "Input error:", errorMessage);
     };
 };

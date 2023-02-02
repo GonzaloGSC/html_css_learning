@@ -21,8 +21,8 @@ function FuncCloseNavMenuButton() {
     };
 };
 
-window.addEventListener('click', function (e) {
-    if (document.getElementById('nav_menu_button').contains(e.target)) {
+document.addEventListener('click', event => {
+    if (document.getElementById('nav_menu_button').contains(event.target)) {
         FuncNavMenuButton();
     } else {
         FuncCloseNavMenuButton();
