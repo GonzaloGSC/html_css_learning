@@ -72,8 +72,8 @@ document.addEventListener("click", event => {
                     document.getElementsByTagName('header')[0].style.display = "none";
                     document.getElementsByTagName('footer')[0].style.display = "none";
                 } else {
-                    document.getElementsByTagName('header')[0].style.display = "block";
-                    document.getElementsByTagName('footer')[0].style.display = "block";
+                    document.getElementsByTagName('header')[0].style.display = "flex";
+                    document.getElementsByTagName('footer')[0].style.display = "flex";
                 };
 
             })
