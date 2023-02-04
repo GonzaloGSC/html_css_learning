@@ -7,6 +7,7 @@
     justify-content: center;
     border-bottom: 2px solid var(--color_very_light_pink);
     background: var(--color_modal_background_content);
+    z-index: 1;
 }
 
 .header-container {
@@ -21,6 +22,7 @@
 
 .header-logo-image {
     width: 160px;
+    cursor: pointer;
 }
 
 .header-nav {

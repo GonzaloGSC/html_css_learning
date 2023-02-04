@@ -41,6 +41,7 @@ export function FuncCreateAccountFormSubmited(event) {
         password2: elements.password2.value,
         terms: elements.terms.checked,
         privacy: elements.privacy.checked,
+        // captcha_solution: elements.captcha_solution.defaultValue
     };
     let validated = true;
     let reg = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");

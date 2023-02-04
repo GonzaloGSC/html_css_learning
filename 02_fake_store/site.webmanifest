@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Fake Store",
+    "short_name": "FStore",
     "icons": [
         {
             "src": "./media/icons/android-chrome-192x192.png",

@@ -20,6 +20,7 @@
     cursor: pointer;
     animation: createToastAnimation 1s forwards;
     overflow: hidden;
+    z-index: 10000;
 }
 
 @keyframes createToastAnimation {

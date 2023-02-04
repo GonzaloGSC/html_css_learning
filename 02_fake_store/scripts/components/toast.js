@@ -1,6 +1,6 @@
 let removedToasts = [];
 
-export function FuncCreateToast(type, title, message, autoRemove = true, lifeTime = 5000) {
+export function FuncCreateToast(type, title, message, autoRemove = true, lifeTime = 10000) {
     let validTypes = ["info", "success", "error", "warning"];
     if (validTypes.includes(type)) {
         let container = document.getElementById("toast_container");
@@ -37,7 +37,7 @@ export function FuncCreateToast(type, title, message, autoRemove = true, lifeTim
         contentDiv.appendChild(icon);
         contentDiv.appendChild(textDiv);
         newToast.appendChild(contentDiv);
-        container.appendChild(newToast);
+        container.insertBefore(newToast, container.firstChild);
         newToast.onclick = () => RemoveToast(newToast);
         if (autoRemove) {
             setTimeout(() => {
