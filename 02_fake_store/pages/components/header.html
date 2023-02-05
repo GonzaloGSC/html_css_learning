@@ -22,7 +22,7 @@
         </nav>
     </div>
     <div class="custom-col s--align-c s--margin-4px">
-        <div class="custom-row">
+        <div class="custom-row" id="no_logged_in_div">
             <div class="custom-col s--margin-4px">
                 <button class="t--line-24pt s--success-color s--white-backg s--success-border s--width-100px"
                     name="login_html">
@@ -32,6 +32,17 @@
             <div class="custom-col s--margin-4px">
                 <button class="t--line-24pt s--white-color s--success-backg s--white-border s--width-100px"
                     name="create_account_html">Sign up</button>
+            </div>
+        </div>
+        <div class="custom-row f--justify-sb" id="logged_in_div">
+            <div class="custom-col s--margin-4px s--margin-r-20px">
+                <i class="icon-shopping-cart icon-2x"><p id="notifications_count_shopping">1</p></i>
+            </div>
+            <div class="custom-col s--margin-4px s--align-c">
+                <p id="p_welcome_to_user"></p>
+            </div>
+            <div class="custom-col  s--margin-4px s--margin-l-8px">
+                <i class="icon-user icon-2x"><!-- <p id="notifications_count_user">1</p> --></i>
             </div>
         </div>
     </div>

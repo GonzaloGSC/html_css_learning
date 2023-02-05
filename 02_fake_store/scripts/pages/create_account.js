@@ -1,4 +1,5 @@
 import { FuncCreateToast } from '../components/toast.js';
+import { FuncLoadContent } from '../utils.js';
 
 document.addEventListener("input", event => {
     if (event.target.id === "create_account_form_email1") {
@@ -41,10 +42,11 @@ export function FuncCreateAccountFormSubmited(event) {
         password2: elements.password2.value,
         terms: elements.terms.checked,
         privacy: elements.privacy.checked,
-        // captcha_solution: elements.captcha_solution.defaultValue
+        logged_in: false,
+        // captcha_solution: elements.captcha_solution.defaultValue,
     };
     let validated = true;
-    let reg = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
+    const reg = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
     let inputEmail1 = document.getElementById("create_account_form_email1");
     let inputEmail2 = document.getElementById("create_account_form_email2");
     let inputName = document.getElementById("create_account_form_name");
@@ -75,10 +77,10 @@ export function FuncCreateAccountFormSubmited(event) {
     } else {
         selectGender.className = "";
     };
-    if (formData.name.length < 4 || formData.name.length > 50) {
+    if (formData.name.length < 4 || formData.name.length > 20) {
         inputName.className = "is-invalid";
         validated = false;
-        errorMessage = errorMessage + "The name must have 4 to 50 characters. ";
+        errorMessage = errorMessage + "The name must have 4 to 20 characters. ";
     } else {
         inputName.className = "";
     };
@@ -115,7 +117,6 @@ export function FuncCreateAccountFormSubmited(event) {
         if (localStorage.getItem("users")) {
             actualUsers = JSON.parse(localStorage.getItem("users"));
             if (actualUsers.find(e => e.email1 === formData.email1)) {
-                console.log("ERROR");
                 validated = false;
                 inputEmail1.className = "is-invalid";
                 FuncCreateToast("info", "Input error:", "The email entered is already registered.");
@@ -138,8 +139,14 @@ export function FuncCreateAccountFormSubmited(event) {
             inputTerms.checked = false;
             inputPrivacy.checked = false;
             FuncCreateToast("success", "Message:", "User created successfully.");
+            setTimeout(() => {
+                FuncLoadContent("content_div", "/02_fake_store/pages/login.html").then(e => {
+                    document.getElementsByTagName('header')[0].style.display = "none";
+                    document.getElementsByTagName('footer')[0].style.display = "none";
+                });
+            }, 300);
         };
-    } else{
+    } else {
         FuncCreateToast("warning", "Input error:", errorMessage);
     };
 };

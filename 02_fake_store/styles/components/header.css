@@ -106,6 +106,43 @@
     align-self: center;
 }
 
+#logged_in_div,
+#no_logged_in_div {
+    display: none;
+}
+
+#p_welcome_to_user {
+    margin: 0;
+}
+
+.icon-shopping-cart,
+.icon-user {
+    display: flex;
+    border: 2px solid var(--color_hospital_green);
+    width: 24pt;
+    height: 24pt;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: var(--color_dark_soft);
+    cursor: pointer;
+}
+
+#notifications_count_shopping,
+#notifications_count_user {
+    display: flex;
+    position: fixed;
+    translate: 15px;
+    top: 29px;
+    font-size: 8pt;
+    background-color: var(--color_red_error_1);
+    width: 24px;
+    justify-content: center;
+    border-radius: 50px;
+    color: white;
+}
+
 @media (max-width: 1000px) {
     #header_content_div {
         height: 75px;
