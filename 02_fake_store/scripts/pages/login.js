@@ -33,7 +33,6 @@ export function FuncGetUserLoggedIn() {
             document.getElementById('logged_in_div').style.display = "flex";
             document.getElementById('no_logged_in_div').style.display = "none";
             document.getElementById('p_welcome_to_user').textContent = `Welcome ${user.gender == 'male' ? "Mr." : user.gender == 'female' ? "Ms." : ""} ${user.name}`;
-
         };
     } else {
         document.getElementById('logged_in_div').style.display = "none";
